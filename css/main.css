@@ -1,3 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Manrope|Rammetto+One|Spicy+Rice|Titan+One&display=swap');
+
+body{
+  background-color: #000;
+  color: #fff;
+  font-size: 25px;
+  min-height: 100%;
+  padding: 5px;
+  font-family: 'Manrope', sans-serif;
+  width: 100%;
+}
+
 nav ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li:first-child {
+  display: block;
+}
+
+nav ul li {
+  background-color: #CECECE;
+  border: 1px solid #000;
+  display: none;
+  padding: 20px
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.open li {
+  display: block;
+}
+
+.container  {
+  padding: 0px 20px;
+}
+
+section  {
+  padding: 10px 50px;
+  margin: 50px 10px;
+  border-radius: 15px;
+}
+
+.title  {
+  font-size: 30px;
+}
+
+.title, h2  {
+  /* font-family: 'Titan One', cursive; */
+  font-family: 'Rammetto One', cursive;
+  /* font-family: 'Spicy Rice', cursive; */
+}
+
+.notes  {
+  background-color: #67270F;
+}
+
+.questions  {
+  background-color: #270F67;
+}
+
+.other  {
+  background-color: #7C6D48;
+}
+
+footer  {
+  margin: auto;
+  text-align: center;
+  min-height: 100px;
 }
