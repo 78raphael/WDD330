@@ -79,12 +79,23 @@ p {
 }
 
 .questions  {
-  background-color: #270F67;
+  background-color: #0F3B67;
 }
 
-/* .other  {
-  background-color: #7C6D48;
-} */
+.odd  {
+  background-color: #0F6763;
+}
+
+.even  {
+  background-color: #340F67;
+}
+
+button  {
+  background-color: khaki;
+  font-size: 1em;
+  border-radius: 5px;
+  padding: 5px;
+}
 
 footer  {
   margin: auto;
