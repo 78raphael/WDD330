@@ -3,11 +3,10 @@
 body{
   background-color: #000;
   color: #fff;
-  font-size: 25px;
+  font-size: 15px;
   min-height: 100%;
   padding: 5px;
   font-family: 'Manrope', sans-serif;
-  width: 100%;
 }
 
 nav ul {
@@ -22,9 +21,9 @@ nav ul li:first-child {
 
 nav ul li {
   background-color: #CECECE;
-  border: 1px solid #000;
+  border-bottom: 1px solid #000;
   display: none;
-  padding: 20px
+  padding: 5px
 }
 
 nav ul li a {
@@ -42,16 +41,34 @@ nav ul li a {
 }
 
 section  {
-  padding: 10px 50px;
-  margin: 50px 10px;
-  border-radius: 15px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+section ol  {
+  padding-left: 20px;
+}
+
+h1  {
+  margin: 10px;
+}
+
+h2  {
+  margin: 10px;
+}
+
+h3  {
+  margin: 5px;
+}
+
+p {
+  margin: 10px 0;
 }
 
 .title  {
-  font-size: 30px;
-}
-
-.title, h2  {
+  font-size: 20px;
+  margin: 10px 0;
   /* font-family: 'Titan One', cursive; */
   font-family: 'Rammetto One', cursive;
   /* font-family: 'Spicy Rice', cursive; */
@@ -71,6 +88,6 @@ section  {
 
 footer  {
   margin: auto;
+  padding: 10px 0;
   text-align: center;
-  min-height: 100px;
 }
