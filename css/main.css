@@ -91,10 +91,12 @@ p {
 }
 
 button  {
+  cursor: pointer;
   background-color: khaki;
   font-size: 1em;
   border-radius: 5px;
   padding: 5px;
+  margin: 5px;
 }
 
 footer  {
@@ -102,3 +104,12 @@ footer  {
   padding: 10px 0;
   text-align: center;
 }
+
+/* _#_#_#_#<br>
+#_#_#_#_<br>
+_#_#_#_#<br>
+#_#_#_#_<br>
+_#_#_#_#<br>
+#_#_#_#_<br>
+_#_#_#_#<br>
+#_#_#_#_<br> */
