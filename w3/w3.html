@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Week X</title>
+  </head>
+  <body>
+    <nav>
+      <ul id="navigation">
+        <li>
+          <a href="#" id="menu">Menu</a>
+        </li>
+        <li>
+          <a href="../index.html">Home</a>
+        </li>
+        <li>
+          <a href="../w1/w1.html">Week 1</a>
+        </li>
+        <li>
+          <a href="../w2/w2.html">Week 2</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="main-container">
+    <header></header>
+    <div class="container">
+      <h2>Week 3</h2>
+      <section class="notes odd">
+        <h2>Notes</h2>
+        <hr>
+        <p class="title">Chapter 5: Objects</p>
+
+        <p>Notes
+          <br><br>
+          <ul>
+            <li>Objects are a set of related self contained group of functions and values.</li>
+            <li>Objects are used to keep related values and methods together in the same place.</li>
+            <li>An object literal is wrapped in curly braces: {}. A useful way to organize code into a single unit.</li>
+            <li>Objects are mutable, meaning properties and methods are able to be changed or removed</li>
+            <li>Use of dot notation is a way of accessing properties in an object. EX. object.propertyName</li>
+            <li>Bracket notation is also a way to access properties. EX.object['propertyName']</li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          <ul>
+            <li>delete operator can remove a property from an object: EX. delete object.propertyName</li>
+            <li>keyword {{this}} refers to the object that is the property or method is within</li>
+            <li>Namespacing: crating an object literal that serves as a distict object for properties and values. One advantage this has is if multiple methods use the same name, but need differnt objects to work within</li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          JSON:
+          <ol>
+            <li>Property names must be double-quoted</li>
+            <li>Permitted values are double-quoted strings, numbers, true, false, null, arrays and objects</li>
+            <li>Functions are not permitted values</li>
+          </ol>
+          <ul>
+            <li>parse(): takes a string of data in JSON format and returns a JavaScript object </li>
+            <li>stringify(): takes a JavaScript object and returns a string of JSON data</li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          <ul>
+            <li>The Epoch is a time that starts on 1 January 1970, and counts using seconds from that date</li>
+            <li>UTC is much the same as Greenwich Mean Time.</li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          Regular Expressions
+          <ul>
+            <li>greedy, which means they will match the longest possible string</li>
+            <li>lazy modifiers that match the shortest possible string by adding an extra '?' after the modifier.</li>
+            <li>Sub-patterns can be created inside a regular expression by placing them inside parentheses. These are known as capturing groups</li>
+          </ul>
+        </p>
+      </section>
+
+      <section class="notes even">
+        <h2>Notes</h2>
+        <hr>
+        <p class="title">Chapter 6: Document Object Model</p>
+          
+        <p>
+          <ul>
+            <li>The Document Object Model, or DOM for short, represents an HTML document as a network of connected nodes that form a tree-like structure</li>
+            <li>The DOM treats everything on a web page as a node</li>
+            <li>Document.body returns the body element of a web page, as we saw in the previous example.</li>
+            <li>Document.images returns a node list of all the images contained in the document.</li>
+            <li>Document.links returns a node list of all the <a> elements and <area> elements that have an href attribute.</li>
+            <li>Document.anchors returns a node list of all the <a> elements that have a name attribute.</li>
+            <li>Document.forms returns a node list of all the forms in the document</li>
+          </ul>
+        </p>
+
+        <p>
+          <ul>
+            <li>The document.querySelector() method allows you to use CSS notation to find the first element in the document that matches that matches a CSS selector provided as an argument</li>
+            <li>The childNodes property is a list of all the nodes that are children of the node concerned</li>
+            <li>The node lists returned by the document.getElementsByClassName() and document.getElementsByTagName() methods are 'live collections'</li>
+          </ul>
+        </p>
+      </section>
+      <section class="notes odd">
+        <h2>Notes</h2>
+        <hr>
+        <p class="title">Chapter 7: Events</p>
+          
+        <p>
+          <ul>
+            <li>Events provides the link between the web page and user interactions</li>
+            <li>Clicking on a link, pressing a key, or moving a mouse, an event occurs that our program can detect and then respond to</li>
+          </ul>
+        </p>
+
+        <p>
+          <ul>
+            <li>Event listeners allow the the program to respond when the users responds to the website in certain, specific ways. These are actions taken by the program to respond when actions occur on the page, such as clicking on certain buttons or adding text to a box.</li>
+          </ul>
+        </p>
+          
+        <p>There are differnt ways to invoke event handlers:
+          <ol>
+            <li>Inline Event Handlers: adding event handlers directly into the HTML.</li>
+            <li>Use Event Handler properties in JavaScript to assign a function.</li>
+            <li>Add Event Listners, this allows multiple functions to be attached independently to different events: addEventListener()</li>
+          </ol>
+        </p>
+        <p>
+          <ul>
+            <li>The type property returns the type of event that occurred.</li>
+            <li>The target property returns a reference to the node that fired the event.</li>
+            <li>
+              <ol>
+                <li>Mouse events</li>
+                <li>Keyboard events</li>
+                <li>Pressing Modifier keys, such as Shift, Ctrl, Alt</li>
+                <li>Touch events</li>
+              </ol>
+            </li>
+          </ul>
+        </p>
+        <p>
+          <ul>
+            <li>preventDefault() is a method of the event object that can be used inside a callback function to stop a default behavior from happening</li>
+          </ul>
+        </p>
+        <p>
+          <ul>
+            <li>Event propagation is the order that events 'fire' on each element.</li>
+            <li>There are 2 forms of event propagation: Bubbling and Capturing</li>
+            <li>Bubbling: when an event fires on the element clicked on first, then bubbles up the document tree, firing an event on each parent element until it reaches the root node</li>
+            <li>Capturing: starts by firing an event on the root element, then propagates downwards, firing an event on each child element until it reaches the target element that was clicked on</li>
+            <li>Bubble phase can be stopped from occurring by adding the event.stopPropagation() method into the callback function</li>
+          </ul>
+        </p>
+
+        <p>Event Delegation
+          <ul>
+            <li>Event delegation can be used to attach an event listener to a parent element in order to capture events that are triggered by its child elements</li>
+          </ul>
+        </p>
+      
+      </section>
+      <section class="questions">
+        <h2>Questions</h2>
+        <hr>
+        <p>
+        <ol>
+          <li>Are Regular Expressions used in most programming languages? Meaning, are Regular Expressions almost a standard feature of most commonly used programming languages?</li>
+        </ol>
+      </p>
+      </section>
+    </div>
+    <footer>
+      &COPY;<span id="#year"></span> Jay Johnson | WDD330 | BYU-I
+    </footer>
+    </div>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
