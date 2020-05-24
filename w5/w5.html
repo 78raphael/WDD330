@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Week 5</title>
+  </head>
+  <body>
+    <nav>
+      <ul id="navigation">
+        <li>
+          <a href="#" id="menu">Menu</a>
+        </li>
+        <li>
+          <a href="../index.html">Home</a>
+        </li>
+        <li>
+          <a href="../w1/w1.html">Week 1</a>
+        </li>
+        <li>
+          <a href="../w2/w2.html">Week 2</a>
+        </li>
+        <li>
+          <a href="../w3/w3.html">Week 3</a>
+        </li>
+        <li>
+          <a href="../w4/w4.html">Week 4</a>
+        </li>
+        <!-- <li>
+          <a href="../w6/w6.html">Week 6: Midterm Checking</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w7/w7.html">Week 7</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w8/w8.html">Week 8</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w9/w9.html">Week 9</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w10/w10.html">Week 10</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w11/w11.html">Week 11</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w12/w12.html">Week 12</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w13/w13.html">Week 13</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w14/w14.html">Week 14</a>
+        </li> -->
+      </ul>
+    </nav>
+    <div class="main-container">
+    <header></header>
+    <div class="container">
+      <h2>Week 5</h2>
+      <section class="notes odd">
+        <h2>Notes</h2>
+        <hr>
+        <p class="title">Chapter 10: Testing and Debugging</p>
+
+        <p>Errors, Exceptions, and Warnings
+          <ul>
+            <li>System error ― there’s a problem with the system or external devices with which the program is interacting.</li>
+            <li>Programmer error ― the program contains incorrect syntax or faulty logic; it could even be as simple as a typo.</li>
+            <li>User error ― the user has entered data incorrectly, which the program is unable to handle.</li>
+            <li>An exception is an error that produces a return value that can then be used by the program to deal with the error.</li>
+            <li>Stack trace: a sequence of functions or method calls that lead to the point where the error occurred</li>
+          </ul>
+        </p>
+        Strict Mode
+        <p>
+          <ul>
+            <li>Writing code in strict mode can also help improve its clarity and speed, since it follows conventions and will throw exceptions if any sloppy code practices are used.</li>
+            <li>Not using strict mode is often referred to as 'sloppy mode' as it’s forgiving of sloppy programming practices.</li>
+            <li>Strict mode encourages a better quality of JavaScript to be written.</li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          LINTING TOOLS
+          <ul>
+            <li>They are designed to highlight any sloppy programming practices or syntax errors, and will complain if certain style conventions are not followed</li>
+            <li>Linting tools are also useful for enforcing a programming style guide</li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          Error Objects
+          <br>
+          There are seven more error objects used for specific errors:
+          <ol>
+            <li>EvalError is not used in the current ECMAScript specification and only retained for backwards compatibility. It was used to identify errors when using the global eval() function.</li>
+            <li>RangeError is thrown when a number is outside an allowable range of values.</li>
+            <li>ReferenceError is thrown when a reference is made to an item that doesn’t exist. For example, calling a function that hasn't been defined.</li>
+            <li>SyntaxError is thrown when there’s an error in the code’s syntax.</li>
+            <li>TypeError is thrown when there’s an error in the type of value used; for example, a string is used when a number is expected.</li>
+            <li>URIError is thrown when there’s a problem encoding or decoding the URI.</li>
+            <li>InternalError is a non-standard error that is thrown when an error occurs in the JavaScript engine. A common cause of this too much recursion.</li>
+          </ol>
+        </p>
+        <br>
+        <p>Exception Handling
+          <br>
+          TRY, CATCH, AND FINALLY
+          <ul>
+            <li>If we suspect a piece of code will result in an exception, we can wrap it in a try block. This will run the code inside the block as normal, but if an exception occurs it will pass the error object that is thrown onto a catch block</li>
+          </ul>
+        </p>
+        <br>
+        <p>TEST-DRIVEN DEVELOPMENT
+          <ul>
+            <li>Test-driven development(TDD) is the process of writing tests before any actual code.</li>
+            <li>Code is refactored to make it faster, more readable, and remove any repetition. The code is continually tested at each stage to make sure it continues to work</li>
+          </ul>
+          Workflow:
+          <ol>
+            <li>Write tests (that initially fail)</li>
+            <li>Write code to pass the tests</li>
+            <li>Refactor the code</li>
+            <li>Test refactored code</li>
+            <li>Write more tests for new features</li>
+          </ol>
+        </p>
+      </section>
+\
+
+      <section class="questions">
+        <h2>Questions</h2>
+        <hr>
+        <p>
+        <ol>
+          <li>What other reliable frameowrks are available for Test-Driven Development?</li>
+          <li>Do most programming languages have frameworks available for Testing?</li>
+        </ol>
+      </p>
+      </section>
+    </div>
+    <footer>
+      &COPY;<span id="#year"></span> Jay Johnson | WDD330 | BYU-I
+    </footer>
+    </div>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
