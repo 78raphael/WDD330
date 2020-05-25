@@ -102,17 +102,24 @@
         </table>
 
         <div class="bar">
-          <span class="tasks-left">3 tasks left</span>
+          <span class="tsk"><span id="numbers">3</span> tasks left</span>
           <span class="all">All</span>
-          <span class="active">Active</span>
-          <span class="completed">Completed</span>
+          <span class="atv">Active</span>
+          <span class="cpt">Completed</span>
         </div>
       </div>
-      <footer>
-        &COPY;<span id="#year"></span> Jay Johnson | WDD330 | BYU-I
+      <footer>        
+        <div class="input-div">
+          <span class="input-text"><input type="text" class="input-box" id="task-input" placeholder="Enter a Task to Add"></span>
+          <span class="input-button"><button class="btn" id="task-btn">+</button></span>
+        </div>
+        <br>
+        <div>
+          &COPY;<span id="#year"></span> Jay Johnson | WDD330 | BYU-I
+        </div>
       </footer>
     </div>
     <script src="../js/main.js"></script>
-    <script src="w6.js"></script>
+    <script src="ToDos.js"></script>
   </body>
 </html>

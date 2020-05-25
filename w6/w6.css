@@ -32,9 +32,42 @@ table tr td:last-child {
 }
 
 .bar  {
-
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.tasks-left {
-  padding: 3px;
+.tsk, .all, .atv, .cpt {
+  display: inline-block;
+  text-align: center;
+  padding: 2px 4px;
+}
+
+.tsk  { background-color: aqua; }
+.all  { background-color: blueviolet;  }
+.atv  { background-color: yellowgreen;}
+.cpt  { background-color: orangered; }
+
+.input-div  {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.input-box {
+  width: 85%;
+  display: inline-block;
+  /* text-align: center; */
+}
+
+.input-button {
+  display: inline-block;
+  text-align: center;
+  width: 10%;
+}
+
+.btn  {
+  /* background-color: red; */
+}
+
+footer  {
+  padding: 25px 10px;
 }
