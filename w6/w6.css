@@ -53,19 +53,18 @@ table tr td:last-child {
 }
 
 .input-box {
-  width: 85%;
+  width: 80%;
   display: inline-block;
-  /* text-align: center; */
 }
 
 .input-button {
   display: inline-block;
   text-align: center;
-  width: 10%;
+  width: 15%;
 }
 
 .btn  {
-  /* background-color: red; */
+  width: 100%;
 }
 
 footer  {
