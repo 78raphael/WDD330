@@ -3,31 +3,34 @@ import * as utl from "./utilities.js";
 
 const btn = document.getElementById('task-btn');
 const taskStorage = window.localStorage;
-const tblList = [];
+let tblList = [];
+
+console.log("taskStorage Length: ", taskStorage.length);
 
 if(taskStorage.length == 0) {
   taskStorage.clear();
 } else {
-  // const tblList = JSON.parse(taskStorage.getItem("tableList"));
+  tblList = JSON.parse(taskStorage.getItem("tableList"));
 
-  // console.log("tableList: ", tblList);
-
-  // tblList.forEach( item => {
-  //   utl.addTaskToTable(item);
-  //   utl.prt2scrn();
-  // });
+  tblList.forEach(item => {
+    utl.addTaskToTable(item);
+  });
 }
 
 btn.addEventListener("click", function()  {
   let entry = document.getElementById('task-input').value;
 
   if(!entry)  {
-    console.log("Enter a valid task name")
-   } else {
+    alert("Enter a valid task name")
+  } else {
+    document.querySelector("tbody").innerHTML = "";
     let newTask = new toDoList(entry, false);
     tblList.push(newTask);
-    console.log("tblList:", tblList);
+
+    tblList.forEach(item => {
+      utl.addTaskToTable(item);
+    });
+
     taskStorage.setItem('tableList', JSON.stringify(tblList));
-    utl.addTaskToTable(newTask);
-   }
+  }
 });
