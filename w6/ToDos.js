@@ -3,19 +3,19 @@ import * as utl from "./utilities.js";
 
 const btn = document.getElementById('task-btn');
 const taskStorage = window.localStorage;
+const tblList = [];
 
 if(taskStorage.length == 0) {
   taskStorage.clear();
-  const tblList = [];
 } else {
-  const tblList = JSON.parse(taskStorage.getItem("tableList"));
+  // const tblList = JSON.parse(taskStorage.getItem("tableList"));
 
-  console.log("tableList: ", tblList);
+  // console.log("tableList: ", tblList);
 
-  tblList.forEach( item => {
-    utl.addTaskToTable(item);
-    utl.prt2scrn();
-  });
+  // tblList.forEach( item => {
+  //   utl.addTaskToTable(item);
+  //   utl.prt2scrn();
+  // });
 }
 
 btn.addEventListener("click", function()  {
