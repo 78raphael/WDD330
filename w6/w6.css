@@ -39,13 +39,13 @@ table tr td:last-child {
 .tsk, .all, .atv, .cpt {
   display: inline-block;
   text-align: center;
-  padding: 2px 4px;
+  padding: 2px 3px;
 }
 
-.tsk  { background-color: aqua; }
+/* .tsk  { background-color: aqua; }
 .all  { background-color: blueviolet;  }
 .atv  { background-color: yellowgreen;}
-.cpt  { background-color: orangered; }
+.cpt  { background-color: orangered; } */
 
 .input-div  {
   box-sizing: border-box;
@@ -64,6 +64,10 @@ table tr td:last-child {
 }
 
 .btn  {
+  width: 100%;
+}
+
+.btn-del  {
   width: 100%;
 }
 
