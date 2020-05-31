@@ -3,29 +3,24 @@ import * as ls from "./ls.js";
 
 const listName = "list";
 let toDoList = [];
+let self;
 
 export default class toDos  {
 
   constructor(taskName) {
-    this.content = taskName;
     this.id = Date.now();
-    this.completed = true;
+    this.content = taskName;
+    this.completed = false;
+    self = this;
 
-    // console.log('constructor', toDoList)
     getToDos(listName);
   }
 
   addToDo()  {
     let entry = document.getElementById('task-input').value;
 
-    // console.log(entry, toDoList);
-
-    saveToDo(entry, listName);
+    saveToDo(listName, entry);
     this.showList();
-  }
-
-  removeToDo(id)  {
-    console.log("remove ID: ", id);
   }
 
   showAll() {
@@ -43,7 +38,6 @@ export default class toDos  {
   }
 
   showActive() {
-    console.log("show active clicked");
     let allItems = document.getElementsByClassName("item-div");
 
     for(var key in allItems)  {
@@ -60,7 +54,6 @@ export default class toDos  {
   }
 
   showCompleted() {
-    console.log("show completed clicked");
     let allItems = document.getElementsByClassName("item-div");
 
     for(var key in allItems)  {
@@ -74,6 +67,45 @@ export default class toDos  {
         }
       }
     }
+  }
+
+  removeToDo(id)  {
+    for(let i = 0; i < toDoList.length; i++ ) {
+      for(let key in toDoList[i]) {
+
+        if(!toDoList[i])  {
+          break;
+        } else {
+          if(toDoList[i].id == id) {
+            toDoList.splice(i, 1);
+          }
+        }
+      }
+    }
+
+    ls.writeToLS( listName, toDoList);
+    this.showList();
+  }
+
+  markCompleted(id) {
+    for(let i = 0; i < toDoList.length; i++ ) {
+      for(let key in toDoList[i]) {
+        if(!toDoList[i])  {
+          break;
+        } else {
+          if(toDoList[i].id == id) {
+            if(!toDoList[i].completed)  {
+              toDoList[i].completed = true;
+            } else {
+              toDoList[i].completed = false;
+            }
+          }
+        }
+      }
+    }
+
+    ls.writeToLS( listName, toDoList);
+    this.showList();
   }
 
   showList()  {
@@ -101,13 +133,12 @@ export default class toDos  {
         del.setAttribute("value", "X");
 
         ckBox.addEventListener("click", function()  {
-          console.log(this.id);
+          self.markCompleted(this.id);
         });
 
         del.addEventListener("click", function()  {
-          console.log(this);
-          this.removeToDo(this.id);
-        });
+          self.removeToDo(this.id);
+        }, false);
 
         utl.addTaskToTable([ckBox, lbl, del], item.completed);
       });
@@ -115,18 +146,17 @@ export default class toDos  {
   }
 }
 
-function saveToDo(task, key) {
+function saveToDo(key, task) {
   let toDo = new toDos(task);
   toDoList.push(toDo);
   ls.writeToLS(key, toDoList);
 }
 
 function getToDos(key) {
-  // console.log('initial', toDoList.length, toDoList, key);
   if(toDoList === null || toDoList.length == 0)  {
     toDoList = ls.readFromLS(key);
     toDoList = (!toDoList) ? [] : toDoList;
-    // console.log("inside getToDos: ", toDoList);
+
     return toDoList;
   } 
   return;
