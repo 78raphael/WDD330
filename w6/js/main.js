@@ -1,4 +1,4 @@
-import toDos from "./toDos";
+import toDos from "../toDos.js";
 
 const add = document.getElementById('btn-add');
 const all = document.getElementById('btn-all');
