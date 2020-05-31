@@ -9,7 +9,7 @@ export default class toDos  {
   constructor(taskName) {
     this.content = taskName;
     this.id = Date.now();
-    this.completed = false;
+    this.completed = true;
 
     // console.log('constructor', toDoList)
     getToDos(listName);
@@ -44,11 +44,36 @@ export default class toDos  {
 
   showActive() {
     console.log("show active clicked");
+    let allItems = document.getElementsByClassName("item-div");
+
+    for(var key in allItems)  {
+      if(typeof allItems[key] == "number")  {
+        break;
+      } else {
+        if(!allItems[key].classList.contains("active"))  {
+          allItems[key].style.display = "none";
+        } else {
+          allItems[key].style.display = "block";
+        }
+      }
+    }
   }
 
   showCompleted() {
     console.log("show completed clicked");
     let allItems = document.getElementsByClassName("item-div");
+
+    for(var key in allItems)  {
+      if(typeof allItems[key] == "number")  {
+        break;
+      } else {
+        if(!allItems[key].classList.contains("completed"))  {
+          allItems[key].style.display = "none";
+        } else {
+          allItems[key].style.display = "block";
+        }
+      }
+    }
   }
 
   showList()  {

@@ -11,6 +11,8 @@ export function addTaskToTable(arr, bool) {
     ul.classList.add("item-div");
     if(bool === true) {
       ul.classList.add("completed");
+    } else  {
+      ul.classList.add("active");
     }
     tds.append(div);
     div.append(item);

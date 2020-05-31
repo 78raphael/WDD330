@@ -34,18 +34,32 @@ table tr td:last-child {
 .bar  {
   width: 100%;
   box-sizing: border-box;
+  padding: 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-bottom: 1px solid black;
 }
 
 .tsk, .all, .atv, .cpt {
-  display: inline-block;
+  display: inline-flex;
+  position: relative;
   text-align: center;
-  padding: 2px 3px;
+  padding: 2px 0;
 }
 
-/* .tsk  { background-color: aqua; }
-.all  { background-color: blueviolet;  }
-.atv  { background-color: yellowgreen;}
-.cpt  { background-color: orangered; } */
+/* .tsk  {
+  background-color: aqua;
+}
+.all  {
+  background-color: blueviolet;
+}
+.atv  {
+  background-color: yellowgreen;
+}
+.cpt  {
+  background-color: orangered;
+} */
 
 .input-div  {
   box-sizing: border-box;
