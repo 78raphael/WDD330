@@ -29,7 +29,26 @@ export default class toDos  {
   }
 
   showAll() {
-    console.log("show all clicked");
+    let allItems = document.getElementsByClassName("item-div");
+
+    for(var key in allItems) {
+      if(typeof allItems[key] == "number")  {
+        break;
+      } else {
+        if(allItems[key].style.display == "none")  {
+          allItems[key].style.display = "block";
+        } else {}
+      }
+    }
+  }
+
+  showActive() {
+    console.log("show active clicked");
+  }
+
+  showCompleted() {
+    console.log("show completed clicked");
+    let allItems = document.getElementsByClassName("item-div");
   }
 
   showList()  {
@@ -37,11 +56,10 @@ export default class toDos  {
     let list_length = (!toDoList) ? 0 : toDoList.length;
     document.getElementById("tsk-num").innerHTML = list_length;
 
-    // console.log("length: ", list_length);
-
     if(list_length > 0)  {
 
       toDoList.forEach(item => {
+
         let ckBox = document.createElement("input");
         ckBox.setAttribute("type", "checkbox");
         ckBox.setAttribute("name", "ck-box");
@@ -66,7 +84,7 @@ export default class toDos  {
           this.removeToDo(this.id);
         });
 
-        utl.addTaskToTable([ckBox, lbl, del]);
+        utl.addTaskToTable([ckBox, lbl, del], item.completed);
       });
     }
   }

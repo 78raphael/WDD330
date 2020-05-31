@@ -1,13 +1,17 @@
 
-export function addTaskToTable(arr) {
+export function addTaskToTable(arr, bool) {
   let container = document.getElementById("list-container"),
   ul = document.createElement('ul'),
   li = document.createElement('li');
 
   let tds = container.appendChild(ul).appendChild(li);
   
-  arr.forEach(item => {
+  arr.forEach((item, key )=> {
     let div = document.createElement("div");
+    ul.classList.add("item-div");
+    if(bool === true) {
+      ul.classList.add("completed");
+    }
     tds.append(div);
     div.append(item);
   });
