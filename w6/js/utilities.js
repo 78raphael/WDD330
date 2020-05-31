@@ -1,0 +1,22 @@
+
+export function addTaskToTable(arr) {
+  let container = document.getElementById("list-container"),
+  ul = document.createElement('ul'),
+  li = document.createElement('li');
+
+  let tds = container.appendChild(ul).appendChild(li);
+  
+  arr.forEach(item => {
+    let div = document.createElement("div");
+    tds.append(div);
+    div.append(item);
+  });
+}
+
+export function qs(selector) {
+  return document.querySelector(selector);
+}
+
+export function onTouch(elementSelector, callback) {
+  
+}

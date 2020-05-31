@@ -68,9 +68,54 @@ table tr td:last-child {
 }
 
 .btn-del  {
-  width: 100%;
+  padding: 0;
+  text-align: center;
+  color: black;
 }
 
 footer  {
   padding: 25px 10px;
+}
+
+#list-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: black;
+  margin: auto;
+  margin: 0;
+  border-bottom: 1px solid black;
+}
+
+#list-container ul li div {
+  display: inline-block;
+  /* align-items: center; */
+  /* border: 1px solid black; */
+}
+
+#list-container ul li div:nth-child(1) {
+  /* background-color: rebeccapurple; */
+  width: 10%;
+  text-align: center;
+  padding: 3px 0;
+  /* border: 1px solid black; */
+  margin: 0;
+}
+
+#list-container ul li div:nth-child(2) {
+  /* background-color: olivedrab; */
+  width: 70%;
+  padding: 3px 5px;
+  /* border: 1px solid black; */
+  margin: 0;
+}
+
+#list-container ul li div:nth-child(3) {
+  /* background-color: plum; */
+  width: 10%;
+  padding: 3px 0;
+  text-align: center;
+  /* border: 1px solid black; */
+  margin: 0;
 }
