@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Week X</title>
+  </head>
+  <body>
+    <nav>
+      <ul id="navigation">
+        <li>
+          <a href="#" id="menu">Menu</a>
+        </li>
+        <li>
+          <a href="../index.html">Home</a>
+        </li>
+        <li>
+          <a href="../w1/w1.html">Week 1</a>
+        </li>
+        <li>
+          <a href="../w2/w2.html">Week 2</a>
+        </li>
+        <li>
+          <a href="../w3/w3.html">Week 3</a>
+        </li>
+        <li>
+          <a href="../w4/w4.html">Week 4</a>
+        </li>
+        <li>
+          <a href="../w5/w5.html">Week 5</a>
+        </li>
+        <li>
+          <a href="../w6/w6.html">Week 6: Midterm</a>
+        </li>
+        <li>
+          <a href="../w7/w7.html">Week 7</a>
+        </li>
+        <!-- <li>
+          <a href="../w8/w8.html">Week 8</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w9/w9.html">Week 9</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w10/w10.html">Week 10</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w11/w11.html">Week 11</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w12/w12.html">Week 12</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w13/w13.html">Week 13</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w14/w14.html">Week 14</a>
+        </li> -->
+      </ul>
+    </nav>
+    <div class="main-container">
+    <header></header>
+    <div class="container">
+      <h2>Week 7</h2>
+      <section class="notes odd">
+        <h2>Notes</h2>
+        <hr>
+        <p class="title">Chapter 11: Further Functions</p>
+
+        <p>First-Class Functions
+          <ul>
+            <li>can be passed around in the same way as every other value</li>
+            <li>have their own properties and methods, as well as accepting other functions as parameters and being returned by other functions</li>
+          </ul>
+        </p>
+        Memoization
+        <p>
+          <ul>
+            <li>a function takes some time to compute a return value, we can save the result in a cache property.</li>
+            <li>the same argument is used again later, we can return the value from the cache, rather than having to compute the result again</li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          Immediately Invoked Function Expression – or IIFE
+          <ul>
+            <li>an anonymous function that is invoked as soon as it’s defined</li>
+          </ul>
+          <ul>
+            <li>The dynamic nature of JavaScript means that a function is able to not only call itself, but define itself, and even redefine itself. This is done by assigning an anonymous function to a variable that has the same name as the function</li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          Callbacks
+          <ul>
+            <li>functions passed to other functions as arguments and then invoked inside the function they are passed to</li>
+            <li>By using callbacks, we ensure that waiting for these tasks to complete doesn't hold up the execution of other parts of the program. Once the task has been completed, the callback will be invoked before returning to the rest of the program</li>
+            <li>when more than one callback is used in the same function, resulting in a large number of nested blocks that are difficult to comprehend</li>
+            <li>Callback hell is the term used to refer to this tangled mess of code</li>
+            <li>error-first callback style: </li>
+            <li>In this coding pattern, callbacks have two arguments. The first is the error argument, which is an error object provided if something goes wrong when completing the operation. The second argument is any data returned by the operation that can be used in the body of the callback</li>
+          </ul>
+        </p>
+        <br>
+        <p>PROMISES
+          <ul>
+            <li>A promise represents the future result of an asynchronous operation</li>
+            <li>Pending: awaiting to be completed</li>
+            <li>Unsettled: In a state where the  asynchronous operation is not completed</li>
+            <li>Settled: The state where the asynchronous operation is completed</li>
+            <li>Resolved ― the asynchronous operation was completed successfully.</li>
+            <li>Rejected ― the asynchronous operation didn’t work as expected, wasn't successfully completed or resulted in an error.</li>
+            <li>A promise is created using a constructor function</li>
+            <li>This takes a function called an executor as an argument. The executor initializes the promise and starts the asynchronous operation. It also accepts two functions as arguments: the resolve() function is called if the operation is successful, and the reject() function is called if the operation fails.</li>
+          </ul>
+        </p>
+        <br>
+        <p>Dealing With A Settled Promise
+          <ul>
+            <li>The first is a fulfilment function that’s called when the promise is resolved</li>
+            <li>The second argument is a rejection function that’s called if the promise is rejected</li>
+          </ul>
+        </p>
+        <br>
+        <p>ASYNC FUNCTIONS
+          <ul>
+            <li>These functions are preceded by the async keyword and allow you to write asynchronous code as if it was synchronous. This is achieved by using the await operator before an asynchronous function.</li>
+          </ul>
+        </p>
+        <br>
+        <p>FUNCTIONS THAT RETURN FUNCTIONS
+          <ul>
+            <li>To make use of the function that is returned, we need to assign it to a variable</li>
+            <li>invoke the function by placing parentheses after the variable that it was assigned to</li>
+          </ul>
+        </p>
+        <br>
+        <p>Closures
+          <ul>
+            <li>A closure is a reference to a variable that was created inside the scope of another function, but is then kept alive and used in another part of the program.</li>
+            <li>This means that whenever a function is defined inside another function, the inner function will have access to any variables that are declared in the outer function's scope</li>
+            <li>A closure is formed when the inner function is returned by the outer function, maintaining access to any variables declared inside the enclosing function</li>
+            <li>What makes this a closure is that it now has access to the variables created inside both the outer() and inner() functions</li>
+            <li>A closure doesn't just have access to the value of a variable, it can also change the value of the variable long after the function in which it was originally declared has been invoked</li>
+            <li>Closures not only have access to variables declared in a parent function's scope, they can also change the value of these variables</li>
+           </ul>
+        </p>
+        <br>
+        <p>GENERATORS
+          <ul>
+            <li>These are special functions used to produce iterators that maintain the state of a value/li>
+            <li>To define a generator function, an asterisk symbol (*) is placed after the function declaration</li>
+            <li>Calling a generator function doesn’t actually run any of the code in the function; it returns a Generator object that can be used to create an iterator that implements a next() method that returns a value every time the next() method is called</li>
+            <li>special yield keyword that is used to return a value</li>
+            <li>The difference between the yield and the return keywords is that by using yield, the state of the value returned is remembered the next time yield is called</li>
+            <li>a generator will maintain its state throughout the life of a program</li>
+          </ul>
+        </p>
+        <br>
+        <p>PURE FUNCTIONS
+          <ol>
+            <li>The return value of a pure function should only depend on the values provided as arguments. It doesn't rely on values from somewhere else in the program</li>
+            <li>There are no side-effects. A pure function doesn't change any values or data elsewhere in the program. It only makes non-destructive data transformations and returns new values, rather than altering any of the underlying data</li>
+            <li>Referential transparency. Given the same arguments, a pure function will always return the same result</li>
+            <li>At least one argument; otherwise the return value must depend on something other than the arguments of the function, breaking the first rule</li>
+            <li>A return value; otherwise there’s no point in the function (unless it has changed something else in the program – in which case, it’s broken the 'no side-effects' rule)</li>
+          </ol>
+        </p>
+        <br>
+        <p>HIGHER-ORDER FUNCTIONS
+          <ul>
+            <li>Higher-order functions are functions that accept another function as an argument, or return another function as a result, or both.</li>
+            <li>Closures are used extensively in higher-order functions as they allow us to create a generic function that can be used to then return more specific functions based on its arguments. This is done by creating a closure around a function's arguments that keeps them 'alive' in a return function</li>
+          </ul>
+        </p>
+        <br>
+        <p>CURRYING
+          <ul>
+            <li>process that involves the partial application of functions</li>
+            <li>A function is said to be curried when not all arguments have been supplied to the function, so it returns another function that retains the arguments already provided, and expects the remaining arguments that were omitted when the original function was called.</li>
+            <li>Currying allows you to turn a single function into a series of functions instead</li>
+          </ul>
+        </p>
+      </section>
+
+      <section class="notes even">
+        <h2>Notes</h2>
+        <hr>
+        <p class="title">Chapter 13: AJAX</p>
+          
+        <p>Fetch API
+          <ul>
+            <li>Fetch API, which is currently a living standard for requesting and sending data asynchronously across a network</li>
+            <li>provides a global fetch() method that only has one mandatory argument, which is the URL of the resource you wish to fetch</li>
+            <li>returns a promise that resolves to the response returned from the URL that was provided as an argument</li>
+            <li>introduced the Response interface that deals with the object that’s returned when the promise is fulfilled. Response objects have a number of properties and methods that allow us to process the response effectively</li>
+          </ul>
+        </p>
+        <br>
+        <p>other properties of the Response object
+          <ul>
+            <li>headers – A Headers object (see later section) containing any headers associated with the response</li>
+            <li>url – A string containing the URL of response</li>
+            <li>redirected – A boolean value that specifies if the response is the result of a redirect</li>
+            <li>type – A string value of 'basic', 'cors', 'error' or 'opaque'</li>
+          </ul>
+        </p>
+        <br>
+        <p>Request( ) constructor
+          <ol>
+            <li>url – The URL of the requested resource (the only property that is required).</li>
+            <li>method – a string that specifies which HTTP method should be used for the request. By default, this is 'GET'.</li>
+            <li>headers – This is a Headers object (see later section) that provides details of the request's headers.</li>
+            <li>mode – Allows you to specify if CORS is used or not. CORS is enabled by default.</li>
+            <li>cache – Allows you to specify how the request will use the browser's cache</li>
+            <li>credentials – Lets you specify if cookies should be allowed with the request.</li>
+            <li>redirect – Specifies what to do if the response returns a redirect</li>
+          </ol>
+        </p>
+        <br>
+        <p>FormData
+          <ul>
+            <li>Fetch API includes the FormData interface, which makes it much easier to submit information in forms using Ajax.</li>
+            <li>If a form is passed to this constructor function as an argument, the form data instance will serialize all the data automatically, ready to be sent using Ajax</li>
+           </ul>
+        </p>
+      </section>
+
+      <section class="questions">
+        <h2>Questions</h2>
+        <hr>
+        <p>
+        <ol>
+          <li>Concepts and practices such as Currying and Generators seem like they are used in Frameworks. Are there any examples of frameworks that use these techniques?</li>
+        </ol>
+      </p>
+      </section>
+    </div>
+    <footer>
+      &COPY;<span id="#year"></span> Jay Johnson | WDD330 | BYU-I
+    </footer>
+    </div>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
