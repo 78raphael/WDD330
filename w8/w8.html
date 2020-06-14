@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Week 8</title>
+  </head>
+  <body>
+    <nav>
+      <ul id="navigation">
+        <li>
+          <a href="#" id="menu">Menu</a>
+        </li>
+        <li>
+          <a href="../index.html">Home</a>
+        </li>
+        <li>
+          <a href="../w1/w1.html">Week 1</a>
+        </li>
+        <li>
+          <a href="../w2/w2.html">Week 2</a>
+        </li>
+        <li>
+          <a href="../w3/w3.html">Week 3</a>
+        </li>
+        <li>
+          <a href="../w4/w4.html">Week 4</a>
+        </li>
+        <li>
+          <a href="../w5/w5.html">Week 5</a>
+        </li>
+        <li>
+          <a href="../w6/w6.html">Week 6: Midterm</a>
+        </li>
+        <li>
+          <a href="../w7/w7.html">Week 7</a>
+        </li>
+        <!-- <li>
+          <a href="../w9/w9.html">Week 9</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w10/w10.html">Week 10</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w11/w11.html">Week 11</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w12/w12.html">Week 12</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w13/w13.html">Week 13</a>
+        </li> -->
+        <!-- <li>
+          <a href="../w14/w14.html">Week 14</a>
+        </li> -->
+      </ul>
+    </nav>
+    <div class="main-container">
+    <header></header>
+    <div class="container">
+      <h2>Week 8</h2>
+      <section class="notes odd">
+        <h2>Notes</h2>
+        <hr>
+        <p class="title">Chapter 8: CSS Transformations and Transitions</p>
+
+        <p>Transforms
+          <ul>
+            <li>transform property: translate, rotate, scale, and/or skew any element on the page</li>
+          </ul>
+        </p>
+        <br>
+        <p>Translation
+          <ul>
+            <li>Translation functions allow you to move elements left, right, up, or down</li>
+            <li>These functions are similar to the behavior of position: relative; when declaring top and left, moving elements up and down or left and right along the x and y axes</li>
+            <li>The translate(x,y) function moves an element x from the left, and y from the top</li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          Scaling
+          <ul>
+            <li>scale(x,y) function scales an element by the defined factors horizontally then vertically</li>
+            <li>If only one value is provided, it will be used for both the x and y values, growing or shrinking your element or pseudo-element while maintaining the original aspect ratio</li>
+          </ul>
+        </p>
+        <br>
+        <p>Rotation
+          <ul>
+            <li>rotate() function rotates an element around the point of origin by a specified angle value</li>
+            <li>by default, the point of origin is the element’s center</li>
+            <li>angles are declared in degrees, with positive degrees moving clockwise and negative moving counterclockwise</li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          Skew
+          <ul>
+            <li>skew(x,y) function specifies a skew along the x and y axes</li>
+          </ul>
+        </p>
+        <br>
+        <p>Changing the transform origin
+          <ul>
+            <li>transform-origin property: control the origin from which your transforms are applied</li>
+          </ul>
+        </p>
+        <br/>
+        <p>Transitions
+          <br>
+          Steps to create a simple transition using only CSS:
+          <ol>
+            <li>Declare the original state of the element in the default style declaration</li>
+            <li>Declare the final state of your transitioned element; for example, a :hover state</li>
+            <li>Include the transition functions in your default style declaration using the transition properties, including: transition-property, transition-duration, transition-timing-function, and transition-delay</li>
+          </ol>
+        </p>
+        <br/>
+        <p>TRANSITION-PROPERTY
+          <ul>
+            <li>defines the CSS properties of the element that should be transitioned, with all for all properties being the default.</li>
+            <li>You can provide any number of CSS properties to the transition-property declaration, separated by commas</li>
+            <li>To support older WebKit browsers, you need to include the -webkit- prefix for all of your transition properties</li>
+            <li>Include the -webkit- prefix for all the transition properties, not just the transition-property property</li>
+            <li>If you want to transition more than one property, but not all, comma-separate them</li>
+            <li>the transition-property property has no effect; that’s because we still need to specify the duration of the transition</li>
+          </ul>
+        </p>
+        <br/>
+        <p>TRANSITION-DURATION
+          <ul>
+            <li>sets how long the transition will take: the duration of time it takes to go from the default state to the transitioned state</li>
+            <li>specify this either in seconds (s) or milliseconds (ms)</li>
+            <li>200ms is generally considered the optimum time for a transition: anything slower will make the website seem slow, drawing generally unwanted attention to what was supposed to be a subtle effect. Anything faster may be too subtle</li>
+          </ul>
+        </p>
+        <br/>
+        <p>TRANSITION-TIMING-FUNCTION
+          <ul>
+            <li>lets you control the pace of the transition in even more granular detail</li>
+          </ul>
+        </p>
+        <br/>
+        <p>TRANSITION-DELAY
+          <ul>
+            <li>introduce a delay before the transition begins</li>
+          </ul>
+        </p>
+        <br/>
+        <p>MULTIPLE TRANSITIONS
+          <ul>
+            <li>If you want your properties to transition at different rates, or if you just want a select few to have a transition effect, include them as a comma-separated list containing, at minimum, the transition-property and transition-duration for each</li>
+            <li>Simply include each value in a comma-separated list using the same order as the transition-property for all your longhand transition property declarations</li>
+          </ul>
+        </p>
+        <br/>
+        <p>Animations
+          <ul>
+            <li>CSS animations: allow you to control each step of an animation via keyframes</li>
+            <li>Keyframe: a snapshot that defines a starting or end point of any smooth transition</li>
+            <li>Keyframes can be specified in any order; it’s the percentage values rather than the order of the declarations that determine the sequence of keyframes in the animation</li>
+            <li>Once we have defined our keyframe animations, the next step is to apply it to one or more elements using the various animation properties</li>
+          </ul>
+        </p>
+        <br/>
+        <p>ANIMATION PROPERTIES
+          <ul>
+            <li>animation-name: used to attach an animation to an element</li>
+            <li>animation-duration: defines the length of time (in seconds or milliseconds) an animation takes to complete one iteration (all the way through, from 0% to 100%)</li>
+          </ul>
+        </p>
+        <br/>
+        <p>
+          <ul>
+            <li>animation-timing-function: determines how the animation will progress over its duration</li>
+            <li>- options are: ease, linear, ease-in, ease-out, ease-in-out</li>
+            <li>animation-iteration-count: define how many times the animation will play through</li>
+            <li>animation-direction: sets the direction (from 0% to 100%) </li>
+            <li>animation-delay: define how many milliseconds or seconds to wait before the browser begins the animation</li>
+            <li>animation-fill-mode: defines what happens before the first animation iteration begins and after the last animation iteration concludes</li>
+            <li>available values are none, forwards, backwards, or both</li>
+            <li>animation-play-state: defines whether the animation is running or paused</li>
+          </ul>
+        </p>
+        <br/>
+        <p>Animation shorthand
+          <ul>
+            <li>To declare multiple animations on an element, include a grouping for each animation name, with each shorthand grouping separated by a comma</li>
+          </ul>
+        </p>
+        <br/>
+      </section>
+
+      <section class="notes even">
+        <h2>Notes</h2>
+        <hr>
+        <p class="title">Chapter 12: Canvas, SVG, and Drag and Drop</p>
+          
+        <p>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
+        </p>
+        <p>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </p>
+        <p>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </p>
+        <p>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </p>
+
+        <p>{{Topic}}
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </p>
+      
+      </section>
+
+      <section class="questions">
+        <h2>Questions</h2>
+        <hr>
+        <p>
+        <ol>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol>
+      </p>
+      </section>
+    </div>
+    <footer>
+      &COPY;<span id="#year"></span> Jay Johnson | WDD330 | BYU-I
+    </footer>
+    </div>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
