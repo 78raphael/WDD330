@@ -198,147 +198,88 @@
         <hr>
         <p class="title">Chapter 12: Canvas, SVG, and Drag and Drop</p>
           
-        <p>
+        <p>Canvas
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>drawing on the canvas is done using JavaScript</li>
+            <li>All drawing on the canvas happens via the Canvas JavaScript API</li>
+            <li>Context: the place where your drawing is rendered</li>
+            <li>strokeStyle and fillStyle are set on a context object</li>
+            <li>take one of three values: a string representing a color, a CanvasGradient object, or a CanvasPattern object</li>
+            <li>Stroke: the border of the shape being drawn</li>
           </ul>
         </p>
         <br>
-        <p>
+        <p>Coordinate System
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>the top-left corner is (0,0). If the canvas is 200 pixels by 200 pixels, then the bottom-right corner is (200,200)</li>
           </ul>
         </p>
         <br>
-        <p>
+        <p>anonymous function
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>are much like regular functions except they are without names</li>
           </ul>
         </p>
         <br>
-        <p>
+        <p>Vocabulary
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Paths create a blueprint for your lines, arcs, and shapes, but paths are invisible until you give them a stroke</li>
+            <li>arc is a segment of a circle</li>
+            <li>arc(x, y, radius, startAngle, endAngle, anticlockwise).</li>
           </ul>
         </p>
         <br>
-        <p>
-          <ol>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ol>
-        </p>
-        <p>
+        <p>Accessibility Concerns
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>A major downside of canvas in its current form is its lack of accessibility</li>
+            <li>canvas doesn’t create a DOM node, is not a text-based format, and is thus essentially invisible to tools such as screen readers.</li>
           </ul>
         </p>
-        <p>
+        <p>SVG
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Scalable Vector Graphics, a specific file format that allows you to describe vector graphics using XML</li>
+            <li>vector images preserve their quality even as you blow them up or shrink them down</li>
+            <li>viewBox attribute defines the starting location, width, and height of the SVG image</li>
           </ul>
         </p>
-        <p>
+        <p>CANVAS VERSUS SVG
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Canvas allows for pixel manipulation</li>
+            <li>One downside of canvas is that it operates in what’s known as immediate mode. This means that if you ever want to add more to the canvas, you’re unable to simply add to what’s already there</li>
+            <li>What you draw to SVG is accessible via the DOM, because its mode is Retained Mode, meaning that the structure of the image is preserved in the XML document that describes it</li>
+            <li>SVG also has, at this time, a more complete set of tools to help you work with it</li>
+            <li>since SVG is a file format you can’t manipulate SVG images the way you can manipulate pixels on canvas</li>
           </ul>
         </p>
 
-        <p>{{Topic}}
+        <p>DRAG AND DROP
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Drag and Drop API: allows us to specify that certain elements are draggable, and then specify what should happen when these draggable elements are dragged over or dropped onto other elements on the page</li>
+            <li>two major kinds of functionality you can implement with Drag and Drop: 1) dragging files from your computer into a web page—in combination with the File API, 2) dragging elements into other elements on the same page</li>
           </ul>
         </p>
-      
+        <br>
+        <p>several steps to adding drag and drop
+          <ol>
+            <li>Set the draggable attribute on any HTML elements you’d like to be draggable</li>
+            <li>Add an event listener for the dragstart event on any draggable HTML elements</li>
+            <li>Add an event listener for the dragover and drop events on any elements that you want to have accept dropped items.</li>
+          </ol>
+        </p>
+        <br/>
+        <p>
+          <ul>
+            <li>draggable is not a Boolean attribute, so you have to explicitly set it to true</li>
+          </ul>
+        </p>
+        <br/>
+        <p>DataTransfer objects
+          <ul>
+            <li>allow us to set and get data about the elements that are being dragged</li>
+            <li>define two pieces of information: 1) the type of data we’re saving of the draggable element, 2) the value of the data itself</li>
+          </ul>
+        </p>
+        <br/>
       </section>
 
       <section class="questions">
@@ -346,9 +287,7 @@
         <hr>
         <p>
         <ol>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>How common is canvas used in modern websites? I've seen SVG used quite a bit but i've not noticed Canvas as much.</li>
         </ol>
       </p>
       </section>
