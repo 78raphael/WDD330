@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
-    <title>Week X</title>
+    <title>Week 9</title>
   </head>
   <body>
     <nav>
@@ -59,260 +59,162 @@
     <div class="main-container">
     <header></header>
     <div class="container">
-      <h2>Week X</h2>
+      <h2>Week 9</h2>
       <section class="notes odd">
         <h2>Notes</h2>
         <hr>
-        <p class="title">Chapter X: Title</p>
+        <p class="title">Chapter 9: The Window Object</p>
 
-        <p>{{Topic}}
+        <p>Browser Object Model
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Browser Object Model (or BOM for short) is a collection of properties and methods that contain information about the browser and computer screen</li>
+            <li>In a browser environment, the global object is the window object.</li>
+            <li>The window object has a navigator property that returns a reference to the Navigator object</li>
+            <li>Navigator object contains information about the browser being used</li>
+            <li>userAgent property will return information about the browser and operating system being used</li>
           </ul>
         </p>
-        {{Topic}}
-        <p>
+        <br>
+        <p>Helpful Window properties
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>window.history property can be used to access information about any previously visited pages in the current browser session</li>
+            <li>window.history.go() method can be used to go to a specific page</li>
+            <li>window.history.forward() and window.history.back() methods that can be used to navigate forwards and backwards by one page respectively</li>
+            <li>window.open() open a new window</li>
+            <li>close() method can be used to close a window</li>
+            <li>window.moveTo() move a window</li>
+            <li>window.resizeTo() resize a window</li>
           </ul>
         </p>
         <br>
         <p>
-          {{Topic}}
-          <ol>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ol>
+          Screen Information
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>window.screen object contains information about the screen the browser is displayed on</li>
+            <li>availHeight and availWidth can be used to find the height and width of the screen, excluding any operating system menus</li>
+            <li>colorDepth property can be used to find the color bit depth of the user’s monitor</li>
+          </ul>
+        </p>
+        <br>
+        <p>The Document Object
+          <ul>
+            <li>write() method simply writes a string of text to the page</li>
           </ul>
         </p>
         <br>
         <p>
+          Cookies
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Cookies are small files that are saved locally on a user’s computer</li>
+            <li>document.cookie property acts like a special type of string. Assigning another cookie to it won’t overwrite the entire property</li>
+            <li>A cookie’s value can be changed by reassigning it to document.cookie using the same name but a different value</li>
+            <li>Cookies are session cookies by default</li>
           </ul>
         </p>
         <br>
-        <p>
-          {{Topic}}
+        <p>Timing Functions
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>window.setTimeout() method accepts a callback to a function as its first parameter and a number of milliseconds as its second parameter</li>
+            <li>window.clearTimeout() to cancel the timeout</li>
+            <li>window.setInterval() will repeatedly invoke the callback function after every given number of milliseconds</li>
+            <li>window.clearInterval() to cancel the interval</li>
           </ul>
         </p>
+        <br/>
       </section>
 
       <section class="notes even">
         <h2>Notes</h2>
         <hr>
-        <p class="title">Chapter X: Title</p>
+        <p class="title">Chapter 14: HTML4 APIs</p>
           
-        <p>
+        <p>The data- Attribute
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>The data- attribute is a way of embedding data in a web page using custom attributes that are ignored by the browser</li>
+            <li>Use the following format:
+              <ol>
+                <li>Start with data-</li>
+                <li>Contain only lowercase letters, numbers, hyphens, dots, colons or underscores</li>
+                <li>Include an optional string value</li>
+              </ol>
+            </li>
+            <li>The information contained in the attributes can be used to identify particular elements</li>
+            <li>Each element has a dataset property that can be used to access any data- attributes it contains</li>
+            <li>If a data- attribute’s name contains hyphens, they are replaced with camel-case notation</li>
           </ul>
         </p>
         <br>
-        <p>
+        <p>HTML5APIs
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </p>
-      </section>
-
-      <section class="notes odd">
-        <h2>Notes</h2>
-        <hr>
-        <p class="title">Chapter X: Title</p>
-          
-        <p>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>it’s still best practice to use feature detection before using any of the API methods</li>
           </ul>
         </p>
         <br>
-        <p>
+        <p>HTML5 Web Storage
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>The Web Storage API provides a key-value store on the client’s computer that is similar to using cookies but has fewer restrictions, more storage capacity, and is generally easier to use.</li>
+            <li>storing information about users, as well as storing application-specific information that can then be used during future sessions</li>
+            <li>differences with cookies
+              <ol>
+                <li>Information stored is not shared with the server on every request</li>
+                <li>Information is available in multiple windows of the browser (but only if the domain is the same)</li>
+                <li>Storage capacity limit is much larger than the 4KB limit for cookies (there is no actual limit in the specification, but most browsers have a limit set at 5GB per domain)</li>
+                <li>Any data stored does not automatically expire as it does with cookies. This potentially makes cookies a better choice for something like showing a popup once a day</li>
+              </ol>
+            </li>
+            <li>a property called localStorage, which is a native object with a number of properties and methods used to store data. The information is saved in the form of key-value pairs, and the values can only be strings</li>
+            <li>sessionStorage object that works in the same way, although the data is only saved for the current session</li>
+            <li>
+              <ul>
+                <li>key tells us the key of the item that changed</li>
+                <li>newValue tells us the new value to which it has been changed</li>
+                <li>oldValue tells us the previous value before it was changed</li>
+                <li>storageArea tells us if it is stored in local or session storage</li>
+              </ul>
+            </li>
           </ul>
         </p>
         <br>
-        <p>
-          <ol>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ol>
-        </p>
-        <p>
+        <p>GEOLOCATION
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>used to obtain the geographical position of the device</li>
+            <li>it can be used to find the user’s exact location, then link to nearby places or measure the speed at which the user is moving. This information can then be used to filter data based on the user's location or speed and direction of travel</li>
+            <li>Because of privacy concerns, permission to use this has to be granted by the user first.</li>
+            <li>getCurrentPosition() that will return a position object to a specified callback function</li>
+            <li>position.speed property returns the ground speed of the device in meters per second.</li>
+            <li>position.altitude property returns an estimate of the device’s altitude in meters above the WGS84 ellipsoid, which is a standard measurement for the center of the Earth</li>
+            <li>position.heading property returns the direction the device is moving in. This is measured as a bearing in degrees, clockwise from North</li>
+            <li>position.timestamp property returns the time that the position information was recorded</li>
           </ul>
         </p>
-        <p>
+        <br>
+        <p>WEB WORKERS
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Web workers allow processes to be run in the background, adding support for concurrency in JavaScript</li>
+            <li>use the Worker() constructor function to create a new worker</li>
+            <li>postMessage() method can be used to send a message and start the worker working</li>
+            <li>shared web workers that allow lots of different scripts on the same domain to access the same worker object</li>
+            <li>Service Worker API allows a worker script to run in the background with the added benefit of being able to intercept network requests</li>
+            <li>Service workers also allow access to push notifications and background syncing</li>
           </ul>
         </p>
-        <p>
+        <br/>
+        <p>WEBSOCKETS
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Websocket is a new protocol that allows two-way communication with a server</li>
+            <li>a connection is kept open and responses are ‘pushed’ to the client as soon as they are received</li>
           </ul>
         </p>
-
-        <p>{{Topic}}
+        <br>
+        <p>NOTIFICATIONS
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Notification API allows you to show messages using the system's notifications/li>
+            <li>An advantage of using the system notification is that they will still be displayed even if the web page that calls them isn't the current tab</li>
+            <li>Before you can send notifications, you need to get permission granted by the user</li>
+            <li>The constructor function's first parameter is the title of the notification, and is required</li>
+            <li>second parameter is an object of options</li>
           </ul>
         </p>
-      
       </section>
 
       <section class="questions">
