@@ -1,0 +1,21 @@
+/* 
+#120136 - Dark Blue
+#035aa6 - Mid Blue
+#40bad5 - Aqua Blue
+#fcbf1e - Gold
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oxygen&display=swap');
+
+body  {
+  background-color: #000;
+  color: #fff;
+  font-size: 15px;
+  height: 100%;
+  padding: 5px;
+  font-family: 'Oxygen', sans-serif;
+}
+
+footer  {
+  margin-top: -50px;
+}
