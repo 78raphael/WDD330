@@ -58,130 +58,54 @@
 
         <p>{{Topic}}
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Validation done in the browser is called client-side validation</li>
+            <li>Validation done on the server is called server-side validation</li>
+            <li>We want to get the right data, in the right format</li>
+            <li>We want to protect our users' data</li>
+            <li>We want to protect ourselves</li>
           </ul>
         </p>
         <br>
-        <p>{{Topic}}
+        <p>Different types of client-side validation
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Built-in form validation uses HTML5 form validation features</li>
+            <li>JavaScript validation is coded using JavaScript. This validation is completely customizable</li>
           </ul>
         </p>
         <br>
         <p>
-          {{Topic}}
+          built-in form validation
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>required: Specifies whether a form field needs to be filled in before the form can be submitted.</li>
+            <li>minlength and maxlength: Specifies the minimum and maximum length of textual data (strings)</li>
+            <li>min and max: Specifies the minimum and maximum values of numerical input types</li>
+            <li>type: Specifies whether the data needs to be a number, an email address, or some other specific preset type</li>
+            <li>pattern: Specifies a regular expression that defines a pattern the entered data needs to follow</li>
           </ul>
         </p>
         <br>
-        <p>{{Topic}}
+        <p>Validating against a regular expression
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>A regular expression (regex) is a pattern that can be used to match character combinations in text strings, so regexs are ideal for form validation and serve a variety of other uses in JavaScript</li>
           </ul>
         </p>
         <br>
-        <p>{{Topic}}
+        <p>Validating forms using JavaScript
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </p>
-        <br>
-        <p>{{Topic}}
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </p>
-        <br>
-        <p>{{Topic}}
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </p>
-        <br>
-        <p>{{Topic}}
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>The Constraint validation API makes the following properties available</li>
+            <li>
+              <ul>
+                <li>patternMismatch: Returns true if the value does not match the specified pattern, and false if it does match</li>
+                <li>tooLong: Returns true if the value is longer than the maximum length specified by the maxlength attribute, or false if it is shorter than or equal to the maximum</li>
+                <li>tooShort: Returns true if the value is shorter than the minimum length specified by the minlength attribute, or false if it is greater than or equal to the minimum</li>
+                <li>rangeOverflow: Returns true if the value is greater than the maximum specified by the max attribute, or false if it is less than or equal to the maximum</li>
+                <li>rangeUnderflow: Returns true if the value is less than the minimum specified by the min attribute, or false if it is greater than or equal to the minimum</li>
+                <li>typeMismatch: Returns true if the value is not in the required syntax (when type is email or url), or false if the syntax is correct</li>
+                <li>valid: Returns true if the element meets all its validation constraints, and is therefore considered to be valid, or false if it fails any constraint</li>
+                <li>valueMissing: Returns true if the element has a required attribute, but no value, or false otherwise</li>
+                <li>willValidate: Returns true if the element will be validated when the form is submitted; false otherwise</li>
+              </ul>
+            </li>
           </ul>
         </p>
       </section>
@@ -191,150 +115,53 @@
         <hr>
         <p class="title">Using Fetch</p>
           
-        <p>{{Topic}}
+        <p>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses</li>
+            <li>fetch() won’t reject on HTTP error status</li>
+            <li>fetch() can receive cross-site cookies</li>
+            <li>fetch won’t send cookies</li>
+            <li>The fetch() method can optionally accept a second parameter, an init object that allows you to control a number of different settings</li>
+            <li>To cause browsers to send a request with credentials included, even for a cross-origin call, add credentials: 'include' to the init object you pass to the fetch() method</li>
           </ul>
         </p>
         <br>
-        <p>{{Topic}}
+        <p>Headers
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>The Headers interface allows you to create your own headers object via the Headers() constructor. A headers object is a simple multi-map of names to values</li>
+            <li>All of the Headers methods throw a TypeError if a header name is used that is not a valid HTTP Header name</li>
+            <li>The mutation operations will throw a TypeError if there is an immutable guard</li>
           </ul>
         </p>
         <br>          
-        <p>{{Topic}}
+        <p>Guard
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Possible guard values are</li>
+            <li>
+              <ul>
+                <li>none: default</li>
+                <li>request: guard for a headers object obtained from a request (Request.headers)</li>
+                <li>request-no-cors: guard for a headers object obtained from a request created with Request.mode no-cors</li>
+                <li>response: guard for a Headers obtained from a response</li>
+                <li>immutable: Mostly used for ServiceWorkers; renders a headers object read-only</li>
+              </ul>
+            </li>
             <li></li>
           </ul>
         </p>
         <br>
-        <p>{{Topic}}
+        <p>Response objects
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Response instances are returned when fetch() promises are resolved</li>
+            <li>The Response() constructor takes two optional arguments — a body for the response, and an init object</li>
           </ul>
         </p>
         <br>
-        <p>{{Topic}}
+        <p>Body
           <ol>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>A body is an instance of any of the following types: ArrayBuffer, ArrayBufferView (Uint8Array and friends), Blob/File, string, URLSearchParams, FormData</li>
           </ol>
         </p>
-        <br>
-        <p>{{Topic}}
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </p>
-        <br>
-        <p>{{Topic}}
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </p>
-        <br>
-        <p>{{Topic}}
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </p>
-        <br>
-        <p>{{Topic}}
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </p>
-      
       </section>
 
       <section class="questions">
