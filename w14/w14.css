@@ -16,6 +16,46 @@ body  {
   font-family: 'Oxygen', sans-serif;
 }
 
+.main  {
+  margin: 0;
+  min-height: 300px;
+  border: 1px solid yellow;
+}
+
+.quiz-box {
+  margin: 0px 20px;
+  min-height: 300px;
+  border: 1px solid orange;
+}
+
+.custom-select  {
+  position: relative;
+  margin: 0;
+  background-color: #035aa6;
+  border-radius: 5px;
+  width: 90%;
+  height: 50px;
+  margin: 5px;
+}
+
+.custom-select select {
+  display: none;
+}
+
+.select-selected {
+  background-color: red;
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+
 footer  {
-  margin-top: -50px;
+  border: 1px solid red;
 }
