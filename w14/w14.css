@@ -19,31 +19,35 @@ body  {
 .main  {
   margin: 0;
   min-height: 300px;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 }
 
 .quiz-box {
   margin: 0px 20px;
   min-height: 300px;
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
 }
 
 .custom-select  {
   position: relative;
   margin: 0;
   background-color: #035aa6;
-  border-radius: 5px;
   width: 90%;
-  height: 50px;
-  margin: 5px;
+  /* height: 50px; */
+  margin: 15px;
 }
+
+/* .custom-select {
+  position: relative;
+  font-family: Arial;
+} */
 
 .custom-select select {
   display: none;
 }
 
 .select-selected {
-  background-color: red;
+  background-color: #035aa6;
 }
 
 .select-selected:after {
@@ -55,7 +59,33 @@ body  {
   height: 0;
   border: 6px solid transparent;
   border-color: #fff transparent transparent transparent;
+}
+
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+.select-items {
+  position: absolute;
+  background-color: #035aa6;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
 footer  {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
