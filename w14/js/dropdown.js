@@ -1,6 +1,7 @@
 var se_size, div_1, div_2, div_3, select_element;
 var custom_select = document.getElementsByClassName("custom-select");
 var size = custom_select.length;
+let selectArr = new Map();
 
 for (let i = 0; i < size; i++) {
   select_element = custom_select[i].getElementsByTagName("select")[0];
@@ -49,7 +50,19 @@ for (let i = 0; i < size; i++) {
     closeAllSelect(this);
     this.nextSibling.classList.toggle("select-hide");
     this.classList.toggle("select-arrow-active");
+    // console.log(this.innerHTML, this.parentElement.children[0].id);
+    if(this.innerHTML != "...") {
+      selectArr.set(this.parentElement.children[0].id, this.innerHTML);
+    // console.log(selectArr.size);
+    checkArray(selectArr.size);
+    // console.log(selectArr);
+    }
   });
+
+  // div_1.addEventListener("change", function(event) {
+  //   // event.stopPropagation();
+  //   console.log(event);
+  // });
 }
 
 function closeAllSelect(element) {
@@ -75,3 +88,10 @@ function closeAllSelect(element) {
 }
 
 document.addEventListener("click", closeAllSelect);
+
+function checkArray(length) {
+  if(length == 4)  {
+    console.log("dropdown.js", selectArr);
+    exports.billieEllish = selectArr;
+  }
+}
