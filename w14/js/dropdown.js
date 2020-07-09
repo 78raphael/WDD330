@@ -50,19 +50,11 @@ for (let i = 0; i < size; i++) {
     closeAllSelect(this);
     this.nextSibling.classList.toggle("select-hide");
     this.classList.toggle("select-arrow-active");
-    // console.log(this.innerHTML, this.parentElement.children[0].id);
     if(this.innerHTML != "...") {
       selectArr.set(this.parentElement.children[0].id, this.innerHTML);
-    // console.log(selectArr.size);
-    checkArray(selectArr.size);
-    // console.log(selectArr);
+      checkArray(selectArr.size);
     }
   });
-
-  // div_1.addEventListener("change", function(event) {
-  //   // event.stopPropagation();
-  //   console.log(event);
-  // });
 }
 
 function closeAllSelect(element) {
@@ -91,7 +83,7 @@ document.addEventListener("click", closeAllSelect);
 
 function checkArray(length) {
   if(length == 4)  {
-    console.log("dropdown.js", selectArr);
-    exports.billieEllish = selectArr;
+    // console.log("dropdown.js", selectArr);
+    document.getElementById('submit-div').classList.remove('hidden');
   }
 }

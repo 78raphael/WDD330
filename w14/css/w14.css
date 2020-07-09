@@ -22,7 +22,12 @@ body  {
   /* border: 1px solid yellow; */
 }
 
-.quiz-box {
+.hidden {
+  display: none;
+  border: 1px solid red;
+}
+
+.setup-box {
   margin: 0px 20px;
   min-height: 300px;
   /* border: 1px solid orange; */

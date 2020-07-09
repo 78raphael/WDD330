@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="css/dropdown.css">
-    <link rel="stylesheet" href="w14.css">
+    <link rel="stylesheet" href="css/w14.css">
     <title>Trivia Game</title>
   </head>
   <body>
@@ -53,7 +53,7 @@
       <h1>Trivia Game</h1>
     </header>
     <div class="main">
-      <div class="quiz-box">
+      <div id="setup_box" class="setup-box">
         <label for="select1">How many Questions:</label>
         <div class="custom-select">
           <select name="select1" id="select1" class="btn trivia-selects">
@@ -93,18 +93,13 @@
             <option value="boolean">True / False</option>
           </select>
         </div>
-        <!-- <div class="custom-select">
-          <label for="select5">Choose an option:</label>
-          <select name="select5" id="select5" class="btn">
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-            <option value="4">Option 4</option>
-            <option value="5">Option 5</option>
-          </select>
-        </div> -->
-        <button id="btn-submit" class="btn" class="hidden">Submit</button>
+
+        <div id="submit-div" class="hidden">
+          <button id="btn-submit" class="btn">Submit</button>
+        </div>
       </div>
+
+      <div id="trivia_box" class="hidden"></div>
     </div>
 
     <footer>
