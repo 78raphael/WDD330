@@ -33,6 +33,11 @@ body  {
   /* border: 1px solid orange; */
 }
 
+.trivia_box {
+  border: 1px solid orange;
+  min-height: 100px;
+}
+
 footer  {
   /* border: 1px solid red; */
 }

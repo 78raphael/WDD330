@@ -1,7 +1,7 @@
 var submit_btn = document.getElementById('btn-submit');
 
 submit_btn.addEventListener("click", () => {
-  console.log("button clicked");
+  // console.log("button clicked");
   getAPI();
 });
 
@@ -27,8 +27,24 @@ const getAPI = () =>  {
 
 const loadQuestions = (data) => {
   console.log(data);
-  let setup_box = document.getElementById('setup_box');
+  let setup_box = document.getElementById('setup_box'),
+  trivia_box = document.getElementById('trivia_box'),
+  trivia_header = document.getElementById('trivia_header'),
+  firstLoad = 1;
+
   setup_box.setAttribute('class', 'hidden');
+  trivia_box.classList.remove('hidden');
 
+  data.results.forEach( item => {
+    (firstLoad) ? (loadHeader(item),firstLoad = 0) : loadTrivia(item);
+  });
+}
 
+const loadHeader = (items) =>  {
+  trivia_header.innerHTML = items['category'];
+  loadTrivia(items);
+}
+
+const loadTrivia = (items) => {
+  console.log(items);
 }
