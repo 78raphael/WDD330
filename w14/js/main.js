@@ -1,3 +1,7 @@
+import { triviaJson } from './triviaJson.js';
+
+var triviaQuestions;
+
 document.getElementById('btn-submit').addEventListener("click", () => {
   getAPI();
 });
@@ -16,7 +20,13 @@ const getAPI = () =>  {
   .then(response => response.json())
   .then(data => {
     // console.log(data.response_code);
-    (data.response_code === 1) ? chooseAnother() : loadQuestions(data);
+    if(data.response_code === 1)  {
+      chooseAnother();
+    } else {
+      triviaQuestions = new triviaJson(data);
+      console.log('new Object', triviaQuestions);
+      loadQuestions(data);
+    }
   })
   .catch(error => {
     console.error("Error in the fetch(): ", error);
@@ -49,31 +59,48 @@ const chooseAnother = () => {
 }
 
 const loadQuestions = (data) => {
+  let trivia_content = document.getElementById('trivia_content');
   let firstLoad = 1;
+  let question_num = 1;
   // console.log(data);
 
   data.results.forEach( item => {
-    firstLoad = (firstLoad) ? loadHeader(item, firstLoad) : loadTrivia(item);
+    firstLoad = (firstLoad) ? loadHeader(item, firstLoad, question_num) : loadTrivia(item, question_num);
+
+    question_num++;
   });
 }
 
-const loadHeader = (items,firstLoad) =>  {
+const loadHeader = (items,firstLoad, question_num) =>  {
   switchHeader(items['category']);
-  loadTrivia(items);
+  loadTrivia(items, question_num);
   return firstLoad = 0;
 }
 
-const loadTrivia = (items) => {
-  let trivia_content = document.getElementById('trivia_content');
-  console.log(items);
-  createButton(trivia_content);
+const loadTrivia = (items, question_num) => {
+  let trivia_content = document.getElementById('trivia_content'),
+  question_container = document.createElement('div'),
+  question_div = document.createElement('div');
+
+  question_container.classList.add('question_container');
+  question_div.classList.add('question_title');
+  question_div.innerHTML = question_num + ") " + items['question'];
+
+  trivia_content.appendChild(question_container);
+  question_container.appendChild(question_div);
+
+  // console.log("loadTrivia: ", items);
+  createButton(question_container, question_num);
 }
 
-const createButton = (trivia_content) => {
+const createButton = (question_container, question_num) => {
   let label = document.createElement('label');
-  label.innerHTML = 'Question #';
-  label.setAttribute('for', 'question');
+  label.innerHTML = 'Question' + question_num;
+  label.setAttribute('for', 'question'+question_num);
 
   let newDiv = document.createElement('div');
   newDiv.classList.add('trivia-select');
+
+  question_container.appendChild(label);
+  question_container.appendChild(newDiv);
 }

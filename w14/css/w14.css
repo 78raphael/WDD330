@@ -38,6 +38,20 @@ body  {
   min-height: 100px;
 }
 
+.trivia_container {
+  border: 1px solid palevioletred;
+  padding: 5px;
+}
+
+.question_container {
+  border: 1px solid paleturquoise;
+}
+
+.question_title {
+  border: 1px solid blueviolet;
+  padding: 5px;
+}
+
 footer  {
   /* border: 1px solid red; */
 }
