@@ -1,4 +1,4 @@
-import { triviaJson } from './triviaJson.js';
+import { triviaObj } from './triviaObj.js';
 
 var triviaQuestions;
 
@@ -19,11 +19,11 @@ const getAPI = () =>  {
   fetch(url)
   .then(response => response.json())
   .then(data => {
-    // console.log(data.response_code);
+    console.log(data);
     if(data.response_code === 1)  {
       chooseAnother();
     } else {
-      triviaQuestions = new triviaJson(data);
+      triviaQuestions = new triviaObj(data);
       console.log('new Object', triviaQuestions);
       loadQuestions(data);
     }
@@ -63,21 +63,25 @@ const loadQuestions = (data) => {
   let firstLoad = 1;
   let question_num = 1;
   // console.log(data);
+  // console.log('inside loadQuestions', triviaQuestions.triviaArray);
 
-  data.results.forEach( item => {
-    firstLoad = (firstLoad) ? loadHeader(item, firstLoad, question_num) : loadTrivia(item, question_num);
+  data.results.forEach( (item, index) => {
+    let answers = triviaQuestions.triviaArray['Q' + index];
+    // console.log('answers', answers);
+
+    firstLoad = (firstLoad) ? loadHeader(item, firstLoad, question_num, answers) : loadTrivia(item, question_num, answers);
 
     question_num++;
   });
 }
 
-const loadHeader = (items,firstLoad, question_num) =>  {
+const loadHeader = (items, firstLoad, question_num, answers) =>  {
   switchHeader(items['category']);
-  loadTrivia(items, question_num);
+  loadTrivia(items, question_num, answers);
   return firstLoad = 0;
 }
 
-const loadTrivia = (items, question_num) => {
+const loadTrivia = (items, question_num, answers) => {
   let trivia_content = document.getElementById('trivia_content'),
   question_container = document.createElement('div'),
   question_div = document.createElement('div');
@@ -89,18 +93,25 @@ const loadTrivia = (items, question_num) => {
   trivia_content.appendChild(question_container);
   question_container.appendChild(question_div);
 
-  // console.log("loadTrivia: ", items);
-  createButton(question_container, question_num);
+  // console.log("loadTrivia: ", answers);
+  Object.entries(answers).forEach((item) => {
+    // const [key, value] = item;
+    // console.log("loadTrivia[]: ", key, value);
+    createButton(question_container, question_num, item);
+  });
 }
 
-const createButton = (question_container, question_num) => {
-  let label = document.createElement('label');
-  label.innerHTML = 'Question' + question_num;
-  label.setAttribute('for', 'question'+question_num);
+const createButton = (question_container, question_num, answers) => {
+  const [key, value] = answers;
+  // console.log('createButton: ', key, value, answers);
+  // let label = document.createElement('label');
+  // label.innerHTML = question_num + ") ";
+  // label.setAttribute('for', 'answer' + question_num);
 
   let newDiv = document.createElement('div');
   newDiv.classList.add('trivia-select');
+  newDiv.innerHTML = key + ") " + value;
 
-  question_container.appendChild(label);
+  // question_container.appendChild(label);
   question_container.appendChild(newDiv);
 }
