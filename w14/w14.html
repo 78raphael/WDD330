@@ -95,12 +95,6 @@
               <option value="boolean">True / False</option>
             </select>
           </div>
-
-          <!-- <div class="button_container">
-            <div id="submit-div" class="hidden">
-              <button id="btn-submit" class="btn submit-btn">Submit</button>
-            </div>
-          </div> -->
         </div>
         <div class="button_container">
           <div id="submit-div" class="hidden">
@@ -110,13 +104,16 @@
       </div>
 
       <div id="trivia_box" class="hidden">
-        <h2 id="trivia_header"></h2>
-        <div id="trivia_content" class="trivia_container"></div>
-        <div class="button_container">
-          <div id="enter-div" class="">
-            <button id="btn-enter" class="btn submit-btn">Submit</button>
+        <form id="form-trivia">
+          <h2 id="trivia_header"></h2>
+          <div id="trivia_content" class="trivia_container"></div>
+          <hr>
+          <div class="button_container">
+            <div id="enter-div" class="">
+              <button id="btn-enter" class="btn submit-btn">Submit</button>
+            </div>
           </div>
-      </div>
+        </form>
       </div>
     </div>
 
@@ -129,6 +126,5 @@
     <script type="module" src="js/dropdown.js"></script>
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/triviaObj.js"></script>
-    <!-- <script type="module" src="js/dropdown.js"></script> -->
   </body>
 </html>

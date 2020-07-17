@@ -3,8 +3,18 @@ import { triviaObj } from './triviaObj.js';
 var triviaQuestions;
 
 document.getElementById('btn-submit').addEventListener("click", () => {
+  init();
   getAPI();
 });
+
+const init = () => {
+  let enter = document.getElementById('btn-enter');
+
+  enter.addEventListener('click', (event) =>  {
+    event.preventDefault();
+    console.log('form submitted');
+  });
+}
 
 const getAPI = () =>  {
   let select1 = document.getElementById('select1').value,
@@ -33,7 +43,7 @@ const getAPI = () =>  {
   });
 }
 
-const switchHeader = (header, button) => {
+const switchHeader = (header, backDiv) => {
   let setup_box = document.getElementById('setup_box'),
   trivia_box = document.getElementById('trivia_box'),
   trivia_header = document.getElementById('trivia_header'),
@@ -43,11 +53,15 @@ const switchHeader = (header, button) => {
   trivia_box.classList.remove('hidden');
 
   trivia_header.innerHTML = header;
-  (!button) ? '' : trivia_content.appendChild(button);
+  (!backDiv) ? '' : trivia_content.appendChild(backDiv);
 }
 
 const chooseAnother = () => {
-  let backButton = document.createElement('button');
+  let backDiv = document.createElement('div'),
+  backButton = document.createElement('button');
+
+  backDiv.classList.add('button_container');
+  
   backButton.innerHTML = 'Back';
   backButton.classList.add('btn');
   backButton.id = 'back-btn';
@@ -55,19 +69,18 @@ const chooseAnother = () => {
     location.reload();
   });
 
-  switchHeader("Select different categories", backButton);  
+  backDiv.appendChild(backButton);
+
+  switchHeader("Select different categories", backDiv);  
 }
 
 const loadQuestions = (data) => {
   let trivia_content = document.getElementById('trivia_content');
   let firstLoad = 1;
   let question_num = 1;
-  // console.log(data);
-  // console.log('inside loadQuestions', triviaQuestions.triviaArray);
 
   data.results.forEach( (item, index) => {
     let answers = triviaQuestions.triviaArray['Q' + index];
-    // console.log('answers', answers);
 
     firstLoad = (firstLoad) ? loadHeader(item, firstLoad, question_num, answers) : loadTrivia(item, question_num, answers);
 
@@ -99,10 +112,7 @@ const loadTrivia = (items, question_num, answers) => {
   answers_div.classList.add('radio-toolbar');
   question_container.appendChild(answers_div);
 
-  // console.log("loadTrivia: ", answers);
   Object.entries(answers).forEach((item) => {
-    // const [key, value] = item;
-    // console.log("loadTrivia[]: ", key, value);
     createButton(answers_div, question_num, item);
   });
 }
@@ -110,29 +120,18 @@ const loadTrivia = (items, question_num, answers) => {
 const createButton = (answers_div, question_num, answers) => {
   const [key, value] = answers;
   let num = Number(key) + 1;
-  // console.log('createButton: ', key, value, answers);
-  // let label = document.createElement('label');
-  // label.innerHTML = question_num + ") ";
-  // label.setAttribute('for', 'answer' + question_num);
-
-  // let newDiv = document.createElement('div');
-  // newDiv.classList.add('trivia-select');
-  // newDiv.setAttribute('data-ans', 'A' + num);
-  // newDiv.setAttribute('data-ques', 'Q' + question_num);
 
   let radio = document.createElement('input');
   radio.setAttribute('type', 'radio');
   radio.setAttribute('id', 'Q' + question_num + 'A' + num);
   radio.setAttribute('name', 'Q' + question_num);
   radio.setAttribute('value', answers);
-  // radio.classList.add('btn');
   radio.innerHTML = value;
 
   let label = document.createElement('label');
   label.setAttribute('for', 'Q' + question_num + 'A' + num);
   label.innerHTML = value;
 
-  // answers_div.appendChild(newDiv);
   answers_div.appendChild(radio);
   answers_div.appendChild(label);
 }
