@@ -84,34 +84,55 @@ const loadHeader = (items, firstLoad, question_num, answers) =>  {
 const loadTrivia = (items, question_num, answers) => {
   let trivia_content = document.getElementById('trivia_content'),
   question_container = document.createElement('div'),
-  question_div = document.createElement('div');
+  question_div = document.createElement('div'),
+  answers_div = document.createElement('div');
 
   question_container.classList.add('question_container');
+  question_container.setAttribute('id', 'Q' + question_num);
+
   question_div.classList.add('question_title');
   question_div.innerHTML = question_num + ") " + items['question'];
 
   trivia_content.appendChild(question_container);
   question_container.appendChild(question_div);
 
+  answers_div.classList.add('radio-toolbar');
+  question_container.appendChild(answers_div);
+
   // console.log("loadTrivia: ", answers);
   Object.entries(answers).forEach((item) => {
     // const [key, value] = item;
     // console.log("loadTrivia[]: ", key, value);
-    createButton(question_container, question_num, item);
+    createButton(answers_div, question_num, item);
   });
 }
 
-const createButton = (question_container, question_num, answers) => {
+const createButton = (answers_div, question_num, answers) => {
   const [key, value] = answers;
+  let num = Number(key) + 1;
   // console.log('createButton: ', key, value, answers);
   // let label = document.createElement('label');
   // label.innerHTML = question_num + ") ";
   // label.setAttribute('for', 'answer' + question_num);
 
-  let newDiv = document.createElement('div');
-  newDiv.classList.add('trivia-select');
-  newDiv.innerHTML = key + ") " + value;
+  // let newDiv = document.createElement('div');
+  // newDiv.classList.add('trivia-select');
+  // newDiv.setAttribute('data-ans', 'A' + num);
+  // newDiv.setAttribute('data-ques', 'Q' + question_num);
 
-  // question_container.appendChild(label);
-  question_container.appendChild(newDiv);
+  let radio = document.createElement('input');
+  radio.setAttribute('type', 'radio');
+  radio.setAttribute('id', 'Q' + question_num + 'A' + num);
+  radio.setAttribute('name', 'Q' + question_num);
+  radio.setAttribute('value', answers);
+  // radio.classList.add('btn');
+  radio.innerHTML = value;
+
+  let label = document.createElement('label');
+  label.setAttribute('for', 'Q' + question_num + 'A' + num);
+  label.innerHTML = value;
+
+  // answers_div.appendChild(newDiv);
+  answers_div.appendChild(radio);
+  answers_div.appendChild(label);
 }

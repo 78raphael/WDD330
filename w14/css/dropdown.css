@@ -1,9 +1,16 @@
+/* 
+#120136 - Dark Blue
+#035aa6 - Mid Blue
+#40bad5 - Aqua Blue
+#fcbf1e - Gold
+*/
+
 .custom-select  {
   position: relative;
   margin: 0;
   background-color: #035aa6;
-  width: 90%;
-  margin: 15px;
+  width: 100%;
+  margin: 15px 0;
 }
 
 .custom-select select {

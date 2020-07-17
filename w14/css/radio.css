@@ -1,0 +1,41 @@
+/* 
+#120136 - Dark Blue
+#035aa6 - Mid Blue
+#40bad5 - Aqua Blue
+#fcbf1e - Gold
+*/
+
+.radio-toolbar {
+  margin: 0px;
+}
+
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: #035aa6;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #000;
+    margin: 3px 0;
+    border-radius: 10px;
+    width: 85%;
+}
+
+/* .radio-toolbar label:hover {
+  background-color: #dfd;
+} */
+
+/* .radio-toolbar input[type="radio"]:focus + label {
+    border: 2px dashed #444;
+} */
+
+.radio-toolbar input[type="radio"]:checked + label {
+    background-color: #fcbf1e;
+    color: #000;
+    border-color: #000;
+}
