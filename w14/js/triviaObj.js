@@ -5,6 +5,7 @@ export class triviaObj {
     this.setTriviaArray();
     this.setCorrect();
     this.create();
+    this.setScore();
   }
 
   setData(data = []) {
@@ -44,6 +45,14 @@ export class triviaObj {
     return (check[question] == selected) ? 1 : 0 ;
   }
 
+  setScore(score = 0) {
+    this.score = score;
+  }
+
+  getScore()  {
+    return this.score;
+  }
+
   create() {
     let data = this.getData();
     let answers, correct = this.getCorrect();
@@ -51,7 +60,7 @@ export class triviaObj {
     data.forEach((item, i) => {
       answers = item['incorrect_answers'];
       answers.push(item['correct_answer']);
-      correct['Q' + i] = [item['correct_answer']];
+      correct[i] = item['correct_answer'];
 
       this.setTempArray(answers);
       this.randomize();
@@ -84,11 +93,11 @@ export class triviaObj {
     // console.log("correctArray: ", correct);
     let name1 = 'Q' + index;
 
-    collection[name1] = [];
+    collection[index] = {};
 
     arr.forEach((item, i) => {
-      let name2 = 'A' + i;
-      collection[name1][i] = item;
+      // let name2 = 'A' + i;
+      collection[index][i] = item;
       // if(correct[name1] == item){
         // console.log('key: ', name1, 'value: ', correct[name1]);
         // correct[name1] = [name2, item];

@@ -1,6 +1,6 @@
 import { triviaObj } from './triviaObj.js';
 
-var triviaQuestions;
+var game;
 
 document.getElementById('btn-submit').addEventListener("click", () => {
   init();
@@ -13,6 +13,8 @@ const init = () => {
   enter.addEventListener('click', (event) =>  {
     event.preventDefault();
     console.log('form submitted');
+    getResults();
+    showResults();
   });
 }
 
@@ -29,12 +31,12 @@ const getAPI = () =>  {
   fetch(url)
   .then(response => response.json())
   .then(data => {
-    console.log(data);
+    // console.log(data);
     if(data.response_code === 1)  {
       chooseAnother();
     } else {
-      triviaQuestions = new triviaObj(data);
-      console.log('new Object', triviaQuestions);
+      game = new triviaObj(data);
+      console.log('new Object', game);
       loadQuestions(data);
     }
   })
@@ -75,12 +77,12 @@ const chooseAnother = () => {
 }
 
 const loadQuestions = (data) => {
-  let trivia_content = document.getElementById('trivia_content');
+  // let trivia_content = document.getElementById('trivia_content');
   let firstLoad = 1;
-  let question_num = 1;
+  let question_num = 0;
 
   data.results.forEach( (item, index) => {
-    let answers = triviaQuestions.triviaArray['Q' + index];
+    let answers = game.triviaArray[index];
 
     firstLoad = (firstLoad) ? loadHeader(item, firstLoad, question_num, answers) : loadTrivia(item, question_num, answers);
 
@@ -104,13 +106,15 @@ const loadTrivia = (items, question_num, answers) => {
   question_container.setAttribute('id', 'Q' + question_num);
 
   question_div.classList.add('question_title');
-  question_div.innerHTML = question_num + ") " + items['question'];
+  question_div.innerHTML = (question_num + 1) + ") " + items['question'];
 
   trivia_content.appendChild(question_container);
   question_container.appendChild(question_div);
 
   answers_div.classList.add('radio-toolbar');
   question_container.appendChild(answers_div);
+
+  // console.log('answers', answers);
 
   Object.entries(answers).forEach((item) => {
     createButton(answers_div, question_num, item);
@@ -125,7 +129,7 @@ const createButton = (answers_div, question_num, answers) => {
   radio.setAttribute('type', 'radio');
   radio.setAttribute('id', 'Q' + question_num + 'A' + num);
   radio.setAttribute('name', 'Q' + question_num);
-  radio.setAttribute('value', answers);
+  radio.setAttribute('value', answers[1]);
   radio.innerHTML = value;
 
   let label = document.createElement('label');
@@ -134,4 +138,44 @@ const createButton = (answers_div, question_num, answers) => {
 
   answers_div.appendChild(radio);
   answers_div.appendChild(label);
+}
+
+const getResults = () =>  {
+  let correctAnswers = game.correct,
+  score = 0;
+  // console.log('inside getResults: ', typeof correctAnswers, correctAnswers);
+  Object.entries(correctAnswers).forEach((item, index) => {
+    let cell = 'Q' + index;
+    // console.log('cell:', cell, 'index', index);
+    // let radioAnswer = document.forms['form-trivia'][cell].checked;
+    let radios = document.forms['form-trivia'];
+    // console.log('radios:', radios);
+    for(let count = 0; count < radios.length; count++) {
+      // console.log('radios['+cell+']['+count+']', radios[cell][count]);
+      if(radios[cell][count].checked) {
+        let val = radios[cell][count].value;
+        // console.log('cell', cell, 'count', count, 'val', val);
+        // let val = radios[index][count].value;
+        score += (val == item[1]) ? 1 : 0;
+
+        console.log('Selected:', val, 'Correct:', item[1], 'Score:', score);
+        break;
+      }
+    }
+    game.setScore(score);
+
+    console.log('total score', game.getScore());
+
+    // console.log('radioAnswer: ', radioAnswer, radioAnswer.value);
+    // console.log('foreach: ', 'item: ', item, 'index: ', index, 'cell:', cell);
+  });
+}
+
+const showResults = () => {
+  let score = game.getScore();
+  document.getElementById('results_box').classList.remove('hidden');
+  document.getElementById('trivia_box').classList.add('hidden');
+
+  document.getElementById('results_container').innerHTML = score;
+
 }
