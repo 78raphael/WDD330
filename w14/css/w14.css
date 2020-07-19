@@ -25,7 +25,7 @@ body  {
   display: none;
 }
 
-.setup-box {
+.setup_box {
   margin: 0px 20px;
   min-height: 300px;
 }
@@ -44,10 +44,6 @@ body  {
 
 .trivia_container {
   padding: 5px;
-}
-
-.trivia-select {
-  margin: 5px 0;
 }
 
 .question_title {
@@ -70,8 +66,21 @@ body  {
   margin: 0;
 }
 
-.submit-btn {
+.submit_btn {
   background-color: #fcbf1e;
+}
+
+.results  {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.score_text {
+  font-size: 10rem;
+}
+
+.total_text {
+  font-size: 5rem;
 }
 
 footer  {

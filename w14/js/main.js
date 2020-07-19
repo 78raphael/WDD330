@@ -33,7 +33,8 @@ const getAPI = () =>  {
   .then(data => {
     // console.log(data);
     if(data.response_code === 1)  {
-      chooseAnother();
+      document.getElementById("button-container").classList.add("hidden");
+      switchHeader("No questions available. Try again.", backButton("Back"));
     } else {
       game = new triviaObj(data);
       console.log('new Object', game);
@@ -46,10 +47,10 @@ const getAPI = () =>  {
 }
 
 const switchHeader = (header, backDiv) => {
-  let setup_box = document.getElementById('setup_box'),
-  trivia_box = document.getElementById('trivia_box'),
-  trivia_header = document.getElementById('trivia_header'),
-  trivia_content = document.getElementById('trivia_content');
+  let setup_box = document.getElementById('setup-box'),
+  trivia_box = document.getElementById('trivia-box'),
+  trivia_header = document.getElementById('trivia-header'),
+  trivia_content = document.getElementById('trivia-content');
 
   setup_box.setAttribute('class', 'hidden');
   trivia_box.classList.remove('hidden');
@@ -58,28 +59,8 @@ const switchHeader = (header, backDiv) => {
   (!backDiv) ? '' : trivia_content.appendChild(backDiv);
 }
 
-const chooseAnother = () => {
-  let backDiv = document.createElement('div'),
-  backButton = document.createElement('button');
-
-  backDiv.classList.add('button_container');
-  
-  backButton.innerHTML = 'Back';
-  backButton.classList.add('btn');
-  backButton.id = 'back-btn';
-  backButton.addEventListener('click', () => {
-    location.reload();
-  });
-
-  backDiv.appendChild(backButton);
-
-  switchHeader("Select different categories", backDiv);  
-}
-
 const loadQuestions = (data) => {
-  // let trivia_content = document.getElementById('trivia_content');
-  let firstLoad = 1;
-  let question_num = 0;
+  let firstLoad = 1, question_num = 0;
 
   data.results.forEach( (item, index) => {
     let answers = game.triviaArray[index];
@@ -97,7 +78,7 @@ const loadHeader = (items, firstLoad, question_num, answers) =>  {
 }
 
 const loadTrivia = (items, question_num, answers) => {
-  let trivia_content = document.getElementById('trivia_content'),
+  let trivia_content = document.getElementById('trivia-content'),
   question_container = document.createElement('div'),
   question_div = document.createElement('div'),
   answers_div = document.createElement('div');
@@ -113,8 +94,6 @@ const loadTrivia = (items, question_num, answers) => {
 
   answers_div.classList.add('radio-toolbar');
   question_container.appendChild(answers_div);
-
-  // console.log('answers', answers);
 
   Object.entries(answers).forEach((item) => {
     createButton(answers_div, question_num, item);
@@ -141,41 +120,46 @@ const createButton = (answers_div, question_num, answers) => {
 }
 
 const getResults = () =>  {
-  let correctAnswers = game.correct,
-  score = 0;
-  // console.log('inside getResults: ', typeof correctAnswers, correctAnswers);
-  Object.entries(correctAnswers).forEach((item, index) => {
-    let cell = 'Q' + index;
-    // console.log('cell:', cell, 'index', index);
-    // let radioAnswer = document.forms['form-trivia'][cell].checked;
-    let radios = document.forms['form-trivia'];
-    // console.log('radios:', radios);
-    for(let count = 0; count < radios.length; count++) {
-      // console.log('radios['+cell+']['+count+']', radios[cell][count]);
-      if(radios[cell][count].checked) {
-        let val = radios[cell][count].value;
-        // console.log('cell', cell, 'count', count, 'val', val);
-        // let val = radios[index][count].value;
-        score += (val == item[1]) ? 1 : 0;
+  let correctAnswers = game.correct, score = 0;
 
-        console.log('Selected:', val, 'Correct:', item[1], 'Score:', score);
+  Object.entries(correctAnswers).forEach((item, index) => {
+    let radios = document.forms['form-trivia'],
+    cell = 'Q' + index, total = radios.length,
+    count = 0;
+
+    while(radios[cell][count] !== undefined) {
+      if(radios[cell][count].checked) {
+        score += (radios[cell][count].value == item[1]) ? 1 : 0;
         break;
       }
+      count++;
     }
     game.setScore(score);
-
-    console.log('total score', game.getScore());
-
-    // console.log('radioAnswer: ', radioAnswer, radioAnswer.value);
-    // console.log('foreach: ', 'item: ', item, 'index: ', index, 'cell:', cell);
   });
 }
 
 const showResults = () => {
-  let score = game.getScore();
-  document.getElementById('results_box').classList.remove('hidden');
-  document.getElementById('trivia_box').classList.add('hidden');
+  document.getElementById('results-box').classList.remove('hidden');
+  document.getElementById('trivia-box').classList.add('hidden');
 
-  document.getElementById('results_container').innerHTML = score;
+  document.getElementById('score').innerHTML = game.getScore();
+  document.getElementById('total').innerHTML = game.getCorrect().length;
 
+  document.getElementById('results-reset').appendChild(backButton("Reset Game"));
+}
+
+const backButton = (buttonLabel) => {
+  let backDiv = document.createElement('div'),
+  backButton = document.createElement('button');
+
+  backDiv.classList.add('button_container');
+  
+  backButton.innerHTML = buttonLabel;
+  backButton.classList.add('btn');
+  backButton.id = 'back-btn';
+  backButton.addEventListener('click', () => {
+    location.reload();
+  });
+
+  return backDiv.appendChild(backButton);
 }

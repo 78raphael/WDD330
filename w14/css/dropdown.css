@@ -5,7 +5,7 @@
 #fcbf1e - Gold
 */
 
-.custom-select  {
+.custom_select  {
   position: relative;
   margin: 0;
   background-color: #035aa6;
@@ -13,15 +13,15 @@
   margin: 15px 0;
 }
 
-.custom-select select {
+.custom_select select {
   display: none;
 }
 
-.select-selected {
+.select_selected {
   background-color: #035aa6;
 }
 
-.select-selected:after {
+.select_selected:after {
   position: absolute;
   content: "";
   top: 14px;
@@ -32,7 +32,7 @@
   border-color: #fff transparent transparent transparent;
 }
 
-.select-items div,.select-selected {
+.select_items div,.select_selected {
   color: #ffffff;
   padding: 8px 16px;
   border: 1px solid transparent;
@@ -40,7 +40,7 @@
   cursor: pointer;
 }
 
-.select-items {
+.select_items {
   position: absolute;
   background-color: #035aa6;
   top: 100%;
@@ -49,10 +49,10 @@
   z-index: 99;
 }
 
-.select-hide {
+.select_hide {
   display: none;
 }
 
-.select-items div:hover, .same-as-selected {
+.select_items div:hover, .same_as_selected {
   background-color: rgba(0, 0, 0, 0.1);
 }

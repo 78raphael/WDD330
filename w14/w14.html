@@ -54,11 +54,11 @@
       <h1>Trivia Game</h1>
     </header>
     <div class="main">
-      <div id="setup_box" class="setup-box">
+      <div id="setup-box" class="setup_box">
         <div class="container_box">
           <label for="select1">How many Questions:</label>
-          <div class="custom-select">
-            <select name="select1" id="select1" class="btn trivia-selects">
+          <div class="custom_select">
+            <select name="select1" id="select1" class="btn trivia_selects">
               <option value="any" selected disabled>...</option>
               <option value="5">5</option>
               <option value="10">10</option>
@@ -68,8 +68,8 @@
             </select>
           </div>
           <label for="select2">Choose a Category:</label>
-          <div class="custom-select">
-            <select name="select2" id="select2" class="btn trivia-selects">
+          <div class="custom_select">
+            <select name="select2" id="select2" class="btn trivia_selects">
               <option value="any" selected disabled>...</option>
               <option value="9">General Knowledge</option>
               <option value="15">Video Games</option>
@@ -79,8 +79,8 @@
             </select>
           </div>
           <label for="select3">Choose a Difficulty:</label>
-          <div class="custom-select">
-            <select name="select3" id="select3" class="btn trivia-selects">
+          <div class="custom_select">
+            <select name="select3" id="select3" class="btn trivia_selects">
               <option value="any" selected disabled>...</option>
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
@@ -88,8 +88,8 @@
             </select>
           </div>
           <label for="select4">Choose a Type:</label>
-          <div class="custom-select">
-            <select name="select4" id="select4" class="btn trivia-selects">
+          <div class="custom_select">
+            <select name="select4" id="select4" class="btn trivia_selects">
               <option value="any" selected disabled>...</option>
               <option value="multiple">Multiple Choice</option>
               <option value="boolean">True / False</option>
@@ -98,27 +98,30 @@
         </div>
         <div class="button_container">
           <div id="submit-div" class="hidden">
-            <button id="btn-submit" class="btn submit-btn">Submit</button>
+            <button id="btn-submit" class="btn submit_btn">Submit</button>
           </div>
         </div>
       </div>
 
-      <div id="trivia_box" class="hidden">
+      <div id="trivia-box" class="trivia_box hidden">
         <form id="form-trivia">
-          <h2 id="trivia_header"></h2>
-          <div id="trivia_content" class="trivia_container"></div>
-          <hr>
-          <div class="button_container">
-            <div id="enter-div" class="">
-              <button id="btn-enter" class="btn submit-btn">Submit</button>
+          <h2 id="trivia-header"></h2>
+          <div id="trivia-content" class="trivia_container"></div>
+          <div id="button-container" class="button_container">
+            <hr>
+            <div id="enter-div">
+              <button id="btn-enter" class="btn submit_btn">Submit</button>
             </div>
           </div>
         </form>
       </div>
 
-      <div id="results_box" class="hidden">
-        <h2 id="results_header">Results</h2>
-        <div id="results_container"></div>
+      <div id="results-box" class="hidden">
+        <h2 id="results-header">Results</h2>
+        <div id="results-container" class="results">
+          <span id="score" class="score_text"></span>/<span id="total" class="total_text"></span>
+        </div>
+        <div id="results-reset" class="results_btn"></div>
       </div>
     </div>
 
